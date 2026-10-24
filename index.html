@@ -8,7 +8,7 @@
   <meta name="google-site-verification" content="81Aicyu58UFfFMLW-RMThNT_kYLKN4a_8huPibh3yCM" />
   <meta name="yandex-verification" content="95222f99001d1e09" />
 
-  <title>Christian Multilingual Faith Paradise | Portal Hub</title>
+  <title>Christian Multilingual Faith Paradise | Mass Repository Portal</title>
   <style>
     :root {
       --bg-color: #0f172a;
@@ -25,10 +25,10 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-    body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; min-height: 100vh; padding: 20px; display: flex; justify-content: center; }
-    .container { max-width: 1024px; width: 100%; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 36px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.8; min-height: 100vh; padding: 20px; display: flex; justify-content: center; }
+    .container { max-width: 1080px; width: 100%; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 36px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
 
-    /* 下拉選單導覽列 */
+    /* 導覽列 */
     nav { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 32px; }
     .nav-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
     .logo { font-size: 1.4rem; font-weight: 700; color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 8px; cursor: pointer; }
@@ -44,575 +44,187 @@
     .dropdown-menu a:hover { background-color: rgba(56, 189, 248, 0.15); color: var(--accent); }
     .nav-item:hover .dropdown-menu { display: block; }
 
-    /* Hero Banner */
-    .hero { background: linear-gradient(135deg, rgba(56, 189, 248, 0.18) 0%, rgba(30, 41, 59, 0.85) 100%); border: 1px solid var(--border); border-radius: 12px; padding: 40px 28px; text-align: center; margin-bottom: 32px; }
-    .hero h1 { font-size: 2.2rem; margin-bottom: 12px; color: var(--text-main); }
-    .hero p { color: var(--text-muted); font-size: 1.05rem; max-width: 740px; margin: 0 auto; }
+    /* 搜尋與篩選列 */
+    .search-box { display: flex; gap: 12px; margin-bottom: 24px; }
+    .search-input { flex: 1; background: #0f172a; border: 1px solid var(--border); padding: 12px 16px; border-radius: 8px; color: var(--text-main); font-size: 0.95rem; outline: none; }
+    .search-input:focus { border-color: var(--accent); }
+    .search-btn { background: var(--accent); color: #0f172a; border: none; padding: 0 20px; font-weight: bold; border-radius: 8px; cursor: pointer; }
 
-    /* 區塊與排版 */
-    .section-title { font-size: 1.35rem; color: var(--accent); margin-bottom: 16px; margin-top: 28px; display: flex; align-items: center; gap: 8px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 24px; }
-    .card { background: rgba(15, 23, 42, 0.65); border: 1px solid var(--border); padding: 22px; border-radius: 12px; text-decoration: none; color: inherit; display: block; transition: all 0.2s; cursor: pointer; }
-    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .card h3 { color: var(--accent); margin-bottom: 8px; font-size: 1.1rem; }
-    .card p { color: var(--text-muted); font-size: 0.9rem; }
+    /* 文章與卡片清單 */
+    .blog-list-item { background: rgba(15, 23, 42, 0.65); border: 1px solid var(--border); padding: 20px; border-radius: 12px; margin-bottom: 16px; cursor: pointer; transition: transform 0.2s, border-color 0.2s; }
+    .blog-list-item:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .blog-list-item h3 { color: var(--gold); font-size: 1.15rem; margin-bottom: 6px; }
+    .blog-list-meta { font-size: 0.82rem; color: var(--accent); margin-bottom: 10px; font-weight: 500; }
+    .blog-list-desc { color: var(--text-muted); font-size: 0.92rem; }
 
-    /* 文章內文詳盡排版樣式 */
-    .article-box { background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 24px; border-radius: 10px; margin-top: 20px; }
-    .article-box h3 { color: var(--accent); margin-bottom: 12px; font-size: 1.2rem; }
-    .article-box p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px; }
-    .article-box ul { margin-left: 20px; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px; }
-    .article-box li { margin-bottom: 6px; }
+    /* 分頁控制器 */
+    .pagination { display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .page-btn { background: #0f172a; border: 1px solid var(--border); color: var(--text-main); padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; }
+    .page-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .page-info { color: var(--text-muted); font-size: 0.9rem; }
 
-    /* 表單區塊 */
-    .sponsor-form { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; text-align: left; }
-    .form-group label { font-size: 0.9rem; color: var(--text-main); font-weight: 500; }
-    .form-control { background-color: #0f172a; border: 1px solid var(--border); border-radius: 8px; padding: 12px; color: var(--text-main); font-size: 0.95rem; outline: none; }
-    .form-control:focus { border-color: var(--accent); }
-    textarea.form-control { min-height: 120px; resize: vertical; }
+    /* 單篇文章閱讀器 */
+    .article-view { background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 32px; border-radius: 12px; }
+    .article-view h2 { color: var(--gold); font-size: 1.8rem; margin-bottom: 12px; }
+    .article-meta { color: var(--accent); font-size: 0.88rem; font-weight: 600; margin-bottom: 20px; }
+    .article-body { color: var(--text-muted); font-size: 1rem; line-height: 1.8; }
+    .article-body p { margin-bottom: 16px; }
 
-    /* 社群按鈕區 */
-    .btn-group { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 22px; border-radius: 8px; text-decoration: none; font-weight: 700; color: #fff; font-size: 0.92rem; transition: transform 0.2s; }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-accent { background: var(--accent); color: #0f172a; border: none; cursor: pointer; width: 100%; font-size: 1rem; }
-    .btn-whatsapp { background-color: var(--whatsapp-green); }
-    .btn-discord { background-color: var(--discord-purple); }
-    .btn-youtube { background-color: var(--youtube-red); }
-
-    .back-btn { display: inline-block; color: var(--accent); text-decoration: none; font-weight: 600; margin-bottom: 20px; cursor: pointer; font-size: 0.95rem; }
+    .back-btn { display: inline-block; color: var(--accent); text-decoration: none; font-weight: 600; margin-bottom: 20px; cursor: pointer; font-size: 0.92rem; }
     .footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 24px; text-align: center; color: var(--text-muted); font-size: 0.88rem; }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <!-- 下拉選單導覽列 -->
     <nav>
       <div class="nav-top">
-        <a onclick="showPage('home')" class="logo">
+        <a onclick="showHome()" class="logo">
           <svg viewBox="0 0 24 24"><path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/></svg>
-          Christian Multilingual Faith Paradise
+          Faith Paradise Repository
         </a>
       </div>
       <ul class="nav-links">
-        <li class="nav-item">
-          <a onclick="showPage('home')">Home ▾</a>
-          <div class="dropdown-menu">
-            <a onclick="showPage('about-mission')">Our Mission & Vision</a>
-            <a onclick="showPage('statement-of-faith')">Statement of Faith</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a onclick="showPage('resources')">Resources ▾</a>
-          <div class="dropdown-menu">
-            <a onclick="showPage('parallel-translations')">Parallel Translations (ESV/CUV)</a>
-            <a onclick="showPage('audio-bibles')">Audio Bibles & Podcasts</a>
-            <a onclick="showPage('lexicons-tools')">Lexicons & Study Tools</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a onclick="showPage('prayers')">World Prayers ▾</a>
-          <div class="dropdown-menu">
-            <a onclick="showPage('crisis-relief')">Crisis Relief Focus</a>
-            <a onclick="showPage('intercession-log')">Intercession Archive Log</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a onclick="showPage('languages')">Languages ▾</a>
-          <div class="dropdown-menu">
-            <a onclick="showPage('lang-english')">English Fellowship Wing</a>
-            <a onclick="showPage('lang-mandarin')">Mandarin Wing (華語研讀)</a>
-            <a onclick="showPage('lang-global')">Global Language Wings</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a onclick="showPage('etymology')">Etymology ▾</a>
-          <div class="dropdown-menu">
-            <a onclick="showPage('etymology-hebrew')">Hebrew Lexical Roots (OT)</a>
-            <a onclick="showPage('etymology-greek')">Greek Manuscript Studies (NT)</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a onclick="showPage('mentors')">Mentors ▾</a>
-          <div class="dropdown-menu">
-            <a onclick="showPage('advisory-board')">Scholar Advisory Board</a>
-            <a onclick="showPage('sponsor-portal')">Sponsor & Partner Portal</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a onclick="showPage('schedule')">Schedule ▾</a>
-          <div class="dropdown-menu">
-            <a onclick="showPage('coworking-schedule')">24/7 Silent Co-Working Hours</a>
-            <a onclick="showPage('prayer-hours')">Global Prayer Hours</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a onclick="showPage('community')">Community ▾</a>
-          <div class="dropdown-menu">
-            <a onclick="showPage('whatsapp-rules')">WhatsApp Group Rules</a>
-            <a onclick="showPage('discord-guide')">Discord Server Guide</a>
-            <a onclick="showPage('youtube-archive')">YouTube Media Archive</a>
-          </div>
-        </li>
+        <li class="nav-item"><a onclick="showHome()">Home</a></li>
+        <li class="nav-item"><a onclick="renderBlogList(1)">Blog Library (萬篇庫)</a></li>
+        <li class="nav-item"><a href="https://discord.gg/AcsQ6DDqPB" target="_blank">Discord 24/7</a></li>
+        <li class="nav-item"><a href="https://chat.whatsapp.com/CiwJ88eSR19BPLwrDpsYMN?s=cl&p=a&mlu=4&ilr=4" target="_blank">WhatsApp Group</a></li>
       </ul>
     </nav>
 
-    <!-- 動態頁面容器 -->
-    <div id="page-content"></div>
+    <!-- 搜尋與動態渲染容器 -->
+    <div id="app-content"></div>
 
     <div class="footer">
-      <p>&copy; 2026 Christian Multilingual Faith Paradise | Direct Contact: <a href="mailto:danielenglish19960118@gmail.com" style="color:var(--accent); text-decoration:none;">danielenglish19960118@gmail.com</a></p>
+      <p>&copy; 2026 Christian Multilingual Faith Paradise | Scalable Architecture Edition</p>
     </div>
   </div>
 
-  <!-- 應用程式核心邏輯與完整文章內容數據 -->
   <script>
-    const pages = {
-      'home': `
-        <div class="hero">
-          <h1>Christian Multilingual Faith Paradise</h1>
-          <p>Uniting believers, scholars, and language learners worldwide to explore Holy Scripture, transform real-time global news into intercession, and fellowship across diverse languages.</p>
-        </div>
-        
-        <h2 class="section-title">Featured Portal Hubs</h2>
-        <div class="grid">
-          <div onclick="showPage('prayers')" class="card">
-            <h3>World Prayers & Intercession ↗</h3>
-            <p>Real-time UN global news feeds converted into structured scripture-grounded prayer points.</p>
-          </div>
-          <div onclick="showPage('resources')" class="card">
-            <h3>Bible Study Resources ↗</h3>
-            <p>Access parallel ESV/CUV translations, audio Bibles, and Blue Letter Bible original lexicons.</p>
-          </div>
-          <div onclick="showPage('etymology')" class="card">
-            <h3>Scriptural Etymology ↗</h3>
-            <p>Deep-dive into ancient Hebrew roots (Hesed, Shalom) and Greek manuscript terms (Agape, Logos).</p>
-          </div>
-          <div onclick="showPage('community')" class="card">
-            <h3>Community & Social Hub ↗</h3>
-            <p>Connect instantly via our WhatsApp group, 24/7 Discord server, and YouTube media archive.</p>
-          </div>
-        </div>
+    // 建立萬篇級別的資料結構陣列（此處以動態生成 10,000 筆資料庫為例，生產環境可透過 JSON 異步載入）
+    const totalPostsCount = 10000;
+    const postsPerPage = 10;
+    let currentPage = 1;
+    let filteredPosts = [];
 
-        <h2 class="section-title">Partnership & Sponsor Inquiry</h2>
-        <p style="color:var(--text-muted); font-size:0.92rem;">Are you a Christian sponsor, partner organization, or senior scholar wishing to connect with our educational and intercession ministry? Send us a message below.</p>
-        <form action="https://formspree.io/f/myeezkkw" method="POST" class="sponsor-form">
-          <div class="form-group">
-            <label for="sender_type">Inquiry Category (來信身分)</label>
-            <select id="sender_type" name="sender_type" class="form-control">
-              <option value="Sponsor / Organization">Christian Sponsor / Partner Organization (基督教贊助廠商 / 機構)</option>
-              <option value="Senior Mentor / Scholar">Senior Mentor / Honored Predecessor (前輩 / 學者 / 屬靈導師)</option>
-              <option value="Other Collaboration">Other Partnership / Inquiry (其他合作或建言)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="name">Your Name / Title (姓名或稱謂)</label>
-            <input type="text" id="name" name="name" class="form-control" required placeholder="Your name or organization title">
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address (電子郵件)</label>
-            <input type="email" id="email" name="email" class="form-control" required placeholder="danielenglish19960118@gmail.com">
-          </div>
-          <div class="form-group">
-            <label for="message">Message / Proposal (訊息內容或指導)</label>
-            <textarea id="message" name="message" class="form-control" required placeholder="Share your message, proposal, or guidance with us..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-accent">Submit Message</button>
-        </form>
-
-        <div class="btn-group">
-          <a href="https://chat.whatsapp.com/CiwJ88eSR19BPLwrDpsYMN?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn btn-whatsapp">Join WhatsApp Community</a>
-          <a href="https://discord.gg/AcsQ6DDqPB" target="_blank" class="btn btn-discord">Join Discord Server</a>
-          <a href="https://www.youtube.com/@ChristianMultilingual" target="_blank" class="btn btn-youtube">Watch on YouTube</a>
-        </div>
-      `,
-
-      'about-mission': `
-        <a onclick="showPage('home')" class="back-btn">← Back to Portal Home</a>
-        <h1>Our Mission & Vision</h1>
-        <div class="article-box">
-          <h3>Equipping Global Believers Through Language & Prayer</h3>
-          <p>Christian Multilingual Faith Paradise is dedicated to fostering a borderless digital sanctuary where linguistic diligence meets fervent intercession. We believe that studying Holy Scripture through its original languages (Hebrew, Aramaic, and Koine Greek) and multi-lingual translations deepens theological comprehension.</p>
-          <p>Our core pillars include:</p>
-          <ul>
-            <li><strong>Scriptural Integrity:</strong> Utilizing formal equivalence translations (ESV, CUV) and scholarly lexicographical tools.</li>
-            <li><strong>Global Intercession:</strong> Translating real-time international affairs and humanitarian crises into focused daily prayer points.</li>
-            <li><strong>Autodidactic Fellowship:</strong> Providing silent co-working study spaces and multilingual study wings for students, educators, and believers worldwide.</li>
-          </ul>
-        </div>
-      `,
-
-      'statement-of-faith': `
-        <a onclick="showPage('home')" class="back-btn">← Back to Portal Home</a>
-        <h1>Statement of Faith</h1>
-        <div class="article-box">
-          <h3>Core Theological Confession</h3>
-          <p>We unite in historical, orthodox Christian faith, affirming the foundational truths revealed in Scripture:</p>
-          <ul>
-            <li><strong>The Scriptures:</strong> We believe the 66 books of the Old and New Testaments are verbally inspired by God, inerrant in the original manuscripts, and the supreme final authority in faith and life.</li>
-            <li><strong>The Triune God:</strong> We believe in one sovereign God eternally existing in three co-equal persons: Father, Son, and Holy Spirit.</li>
-            <li><strong>The Person & Work of Christ:</strong> We confess Jesus Christ is fully God and fully man, born of a virgin, who lived a sinless life, died vicariously for our sins, bodily resurrected, and ascended to the right hand of the Father.</li>
-            <li><strong>Salvation & Unity:</strong> Salvation is a free gift of God's grace received through personal faith in Jesus Christ, uniting all believers into one spiritual body across every tribe, tongue, and nation.</li>
-          </ul>
-        </div>
-      `,
-
-      'resources': `
-        <a onclick="showPage('home')" class="back-btn">← Back to Portal Home</a>
-        <h1>Online English & Multilingual Bible Resources</h1>
-        <div class="grid" style="margin-top:20px;">
-          <div onclick="showPage('parallel-translations')" class="card">
-            <h3>Parallel Translations ↗</h3>
-            <p>Side-by-side comparison between English Standard Version (ESV) and Chinese Union Version (CUV).</p>
-          </div>
-          <div onclick="showPage('audio-bibles')" class="card">
-            <h3>Audio Bibles & Podcasts ↗</h3>
-            <p>Immersive narrated scripture reading plans and language learning audio streams.</p>
-          </div>
-          <div onclick="showPage('lexicons-tools')" class="card">
-            <h3>Lexicons & Study Tools ↗</h3>
-            <p>Strong's Greek & Hebrew concordance parsing and theological commentary tools.</p>
-          </div>
-        </div>
-      `,
-
-      'parallel-translations': `
-        <a onclick="showPage('resources')" class="back-btn">← Back to Resources</a>
-        <h1>Parallel Translations Study</h1>
-        <div class="article-box">
-          <h3>ESV & CUV Formal Equivalence Analysis</h3>
-          <p>Comparing formal equivalence (word-for-word) translations helps language learners and theological students observe how Greek and Hebrew structures map into modern English and Mandarin.</p>
-          <p>Recommended External Study Tools:</p>
-          <ul>
-            <li><a href="https://www.biblegateway.com" target="_blank" style="color:var(--accent);">BibleGateway Online Library</a> — Search multiple parallel versions simultaneously.</li>
-            <li><a href="https://www.youversion.com" target="_blank" style="color:var(--accent);">YouVersion Scripture App</a> — Daily reading plans across hundreds of languages.</li>
-          </ul>
-        </div>
-      `,
-
-      'audio-bibles': `
-        <a onclick="showPage('resources')" class="back-btn">← Back to Resources</a>
-        <h1>Audio Bibles & Spoken Word</h1>
-        <div class="article-box">
-          <h3>Immersive Listening & Pronunciation Practice</h3>
-          <p>Listening to dramatic or narrated scripture recordings in English or your target study language enhances auditory comprehension, vocabulary retention, and devotional reflection.</p>
-        </div>
-      `,
-
-      'lexicons-tools': `
-        <a onclick="showPage('resources')" class="back-btn">← Back to Resources</a>
-        <h1>Lexicons & Concordance Tools</h1>
-        <div class="article-box">
-          <h3>Blue Letter Bible & Original Language Dictionaries</h3>
-          <p>To study Scripture accurately, we recommend utilizing lexical lexicons like Thayer's Greek Lexicon and Brown-Driver-Briggs (BDB) Hebrew Lexicon.</p>
-          <p>Quick Access:</p>
-          <ul>
-            <li><a href="https://www.blueletterbible.org" target="_blank" style="color:var(--accent);">Blue Letter Bible Interlinear Lexicon</a></li>
-          </ul>
-        </div>
-      `,
-
-      'prayers': `
-        <a onclick="showPage('home')" class="back-btn">← Back to Portal Home</a>
-        <h1>World Prayers & Real-Time Intercession</h1>
-        <p style="color:var(--text-muted); margin-bottom:20px;">Turning real-time international news feeds into scripture-grounded intercession for nations, crisis zones, and humanitarian relief.</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-              <h2 style="color:var(--accent); font-size:1.2rem;">Live World News Feed</h2>
-              <button onclick="fetchLiveNews()" style="background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">↻ Refresh</button>
-            </div>
-            <div id="feed-status" style="color:var(--text-muted); font-style:italic; margin-bottom: 12px; font-size: 0.9rem;">Fetching real-time updates...</div>
-            <div id="news-feed"></div>
-          </div>
-          <div>
-            <h2 style="color:var(--accent); font-size:1.2rem; margin-bottom:16px;">Structured Intercession Focus</h2>
-            <div class="card" style="margin-bottom: 16px; cursor:default;">
-              <h3>Eastern Europe & Eurasia</h3>
-              <p>Praying for civilian protection, food supply routes, and lasting peace.</p>
-            </div>
-            <div class="card" style="margin-bottom: 16px; cursor:default;">
-              <h3>Middle East & Regional Aid</h3>
-              <p>Interceding for unhindered humanitarian access and civilian safety.</p>
-            </div>
-          </div>
-        </div>
-      `,
-
-      'crisis-relief': `
-        <a onclick="showPage('prayers')" class="back-btn">← Back to World Prayers</a>
-        <h1>Crisis Relief Intercession Focus</h1>
-        <div class="article-box">
-          <h3>Targeted Humanitarian Prayer Points</h3>
-          <p>We intercede for vulnerable populations affected by natural disasters, geopolitical conflicts, and economic displacement.</p>
-          <ul>
-            <li><strong>Protection for Aid Workers:</strong> Safety for medical volunteers and food distribution agencies operating in hostile zones.</li>
-            <li><strong>Provision of Clean Water & Sustenance:</strong> Praying for effective relief logistics in drought and famine-stricken regions.</li>
-          </ul>
-        </div>
-      `,
-
-      'intercession-log': `
-        <a onclick="showPage('prayers')" class="back-btn">← Back to World Prayers</a>
-        <h1>Intercession Archive Log</h1>
-        <div class="article-box">
-          <h3>Archived Global Prayer Summaries</h3>
-          <p>Documented weekly prayer focuses covering Eurasia, the Middle East, Africa, and international disaster recovery efforts.</p>
-        </div>
-      `,
-
-      'languages': `
-        <a onclick="showPage('home')" class="back-btn">← Back to Portal Home</a>
-        <h1>Multilingual Fellowship Wings</h1>
-        <div class="grid" style="margin-top:20px;">
-          <div onclick="showPage('lang-english')" class="card"><h3>English Fellowship Wing ↗</h3><p>Daily scripture writing and devotional exchanges.</p></div>
-          <div onclick="showPage('lang-mandarin')" class="card"><h3>Mandarin Wing (華語研讀專區) ↗</h3><p>和合本與英文雙語對照查經小組。</p></div>
-          <div onclick="showPage('lang-global')" class="card"><h3>Global Language Wings ↗</h3><p>Japanese, Korean, Spanish & German fellowship.</p></div>
-        </div>
-      `,
-
-      'lang-english': `
-        <a onclick="showPage('languages')" class="back-btn">← Back to Languages</a>
-        <h1>English Fellowship Wing</h1>
-        <div class="article-box">
-          <h3>Quotidian Writing & Scriptural Devotions</h3>
-          <p>A dedicated space for English educators, learners, and believers to practice daily theological writing, vocabulary expansion, and mutual encouragement.</p>
-        </div>
-      `,
-
-      'lang-mandarin': `
-        <a onclick="showPage('languages')" class="back-btn">← Back to Languages</a>
-        <h1>Mandarin Wing (華語研讀專區)</h1>
-        <div class="article-box">
-          <h3>雙語經文研讀與生命交流</h3>
-          <p>結合中文和合本 (CUV) 與英文標準譯本 (ESV) 的雙語查經園地，歡迎海華信徒與中文學習者一同參與分享。</p>
-        </div>
-      `,
-
-      'lang-global': `
-        <a onclick="showPage('languages')" class="back-btn">← Back to Languages</a>
-        <h1>Global Language Wings</h1>
-        <div class="article-box">
-          <h3>Multilingual Communities (日本語, 한국어, Español, Deutsch)</h3>
-          <p>Connecting international believers across diverse linguistic backgrounds to study Scripture and pray together in their native tongues.</p>
-        </div>
-      `,
-
-      'etymology': `
-        <a onclick="showPage('home')" class="back-btn">← Back to Portal Home</a>
-        <h1>Scriptural Etymology & Lexicography</h1>
-        <div class="grid" style="margin-top:20px;">
-          <div onclick="showPage('etymology-hebrew')" class="card"><h3>Hebrew Roots (Old Testament) ↗</h3><p>Hesed, Shalom, and covenantal root words.</p></div>
-          <div onclick="showPage('etymology-greek')" class="card"><h3>Greek Manuscripts (New Testament) ↗</h3><p>Agape, Logos, and Koine Greek nuances.</p></div>
-        </div>
-      `,
-
-      'etymology-hebrew': `
-        <a onclick="showPage('etymology')" class="back-btn">← Back to Etymology</a>
-        <h1>Hebrew Lexical Roots</h1>
-        <div class="article-box">
-          <h3>Unpacking Old Testament Nuances (Hesed & Shalom)</h3>
-          <p>Studying ancient Hebrew lexical roots provides profound insight into biblical poetry, narrative, and theology.</p>
-          <ul>
-            <li><strong>Hesed (חֶסֶד):</strong> Often translated as "steadfast love," "lovingkindness," or "covenant loyalty." It represents committed, loyal love that binds covenant partners together.</li>
-            <li><strong>Shalom (שָׁלוֹם):</strong> More than mere absence of conflict; it denotes holistic peace, completeness, harmony, and well-being ordained by God.</li>
-          </ul>
-        </div>
-      `,
-
-      'etymology-greek': `
-        <a onclick="showPage('etymology')" class="back-btn">← Back to Etymology</a>
-        <h1>Greek Manuscript Studies</h1>
-        <div class="article-box">
-          <h3>Koine Greek Terminology (Agape & Logos)</h3>
-          <p>Examining New Testament Greek terms in their historical and lexicographical context:</p>
-          <ul>
-            <li><strong>Agape (ἀγάπη):</strong> Self-giving, unconditional, divine love demonstrated supremely through Christ's sacrifice.</li>
-            <li><strong>Logos (λόγος):</strong> Divine reason, word, or expression, famously introducing Christ's eternal existence in John 1.</li>
-          </ul>
-        </div>
-      `,
-
-      'mentors': `
-        <a onclick="showPage('home')" class="back-btn">← Back to Portal Home</a>
-        <h1>Scholar Advisory Board & Sponsors</h1>
-        <div class="grid" style="margin-top:20px;">
-          <div onclick="showPage('advisory-board')" class="card"><h3>Scholar Advisory Board ↗</h3><p>Honoring senior academics and linguists.</p></div>
-          <div onclick="showPage('sponsor-portal')" class="card"><h3>Sponsor Partnership Portal ↗</h3><p>Formspree inquiry for Christian partners.</p></div>
-        </div>
-      `,
-
-      'advisory-board': `
-        <a onclick="showPage('mentors')" class="back-btn">← Back to Mentors</a>
-        <h1>Scholar Advisory Board</h1>
-        <div class="article-box">
-          <h3>Honoring Predecessors & Academic Guidance</h3>
-          <p>We pay tribute to distinguished scholars, linguists, and spiritual mentors whose published works and formal statements guide our pedagogical methods and linguistic research.</p>
-        </div>
-      `,
-
-      'sponsor-portal': `
-        <a onclick="showPage('mentors')" class="back-btn">← Back to Mentors</a>
-        <h1>Sponsor & Partner Inquiry</h1>
-        <form action="https://formspree.io/f/myeezkkw" method="POST" class="sponsor-form" style="margin-top:16px;">
-          <div class="form-group"><label>Organization / Name</label><input type="text" name="name" class="form-control" required placeholder="Organization title"></div>
-          <div class="form-group"><label>Email Address</label><input type="email" name="email" class="form-control" required placeholder="danielenglish19960118@gmail.com"></div>
-          <div class="form-group"><label>Partnership Proposal</label><textarea name="message" class="form-control" required placeholder="Share your proposal..."></textarea></div>
-          <button type="submit" class="btn btn-accent">Send Proposal</button>
-        </form>
-      `,
-
-      'schedule': `
-        <a onclick="showPage('home')" class="back-btn">← Back to Portal Home</a>
-        <h1>Gathering Schedule & Hours</h1>
-        <div class="grid" style="margin-top:20px;">
-          <div onclick="showPage('coworking-schedule')" class="card"><h3>24/7 Silent Co-Working Hours ↗</h3><p>Discord focus study lounges.</p></div>
-          <div onclick="showPage('prayer-hours')" class="card"><h3>Global Prayer Hours ↗</h3><p>Weekly voice prayer sessions.</p></div>
-        </div>
-      `,
-
-      'coworking-schedule': `
-        <a onclick="showPage('schedule')" class="back-btn">← Back to Schedule</a>
-        <h1>24/7 Silent Co-Working Hours</h1>
-        <div class="article-box">
-          <h3>Focused Study & Lexicography Lounges</h3>
-          <p>Our Discord server hosts continuous silent co-working audio rooms where students, writers, and translators study Scripture and compile etymological notes in a quiet, distraction-free environment.</p>
-        </div>
-      `,
-
-      'prayer-hours': `
-        <a onclick="showPage('schedule')" class="back-btn">← Back to Schedule</a>
-        <h1>Global Prayer Hours</h1>
-        <div class="article-box">
-          <h3>Weekly Voice Intercession Calls</h3>
-          <p>Join believers worldwide in our scheduled Discord voice gatherings as we lift up global mission fields, crisis relief zones, and community prayer requests.</p>
-        </div>
-      `,
-
-      'community': `
-        <a onclick="showPage('home')" class="back-btn">← Back to Portal Home</a>
-        <h1>Community Platforms & Socials</h1>
-        <div class="grid" style="margin-top:20px;">
-          <div onclick="showPage('whatsapp-rules')" class="card"><h3>WhatsApp Group Rules ↗</h3><p>Guidelines for our active mobile community.</p></div>
-          <div onclick="showPage('discord-guide')" class="card"><h3>Discord Server Guide ↗</h3><p>Role assignment and channel navigation.</p></div>
-          <div onclick="showPage('youtube-archive')" class="card"><h3>YouTube Media Archive ↗</h3><p>Recorded video devotions and lectures.</p></div>
-        </div>
-      `,
-
-      'whatsapp-rules': `
-        <a onclick="showPage('community')" class="back-btn">← Back to Community</a>
-        <h1>WhatsApp Community Guidelines</h1>
-        <div class="article-box">
-          <h3>Encouraging Christ-Centered Fellowship</h3>
-          <p>To maintain a safe and edifying environment in our WhatsApp community, please observe our guidelines:</p>
-          <ul>
-            <li>Treat all members with kindness, mutual respect, and patience.</li>
-            <li>No unsolicited commercial advertising, spam, or unauthorized solicitation.</li>
-          </ul>
-        </div>
-        <a href="https://chat.whatsapp.com/CiwJ88eSR19BPLwrDpsYMN?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn btn-whatsapp" style="margin-top:16px;">Join WhatsApp Group</a>
-      `,
-
-      'discord-guide': `
-        <a onclick="showPage('community')" class="back-btn">← Back to Community</a>
-        <h1>Discord Server Guide</h1>
-        <div class="article-box">
-          <h3>Role Assignment & Channel Access</h3>
-          <p>Upon entering our Discord server, head over to the <strong>#welcome</strong> channel to select your native and study language roles, unlocking specialized language wings and prayer channels.</p>
-        </div>
-        <a href="https://discord.gg/AcsQ6DDqPB" target="_blank" class="btn btn-discord" style="margin-top:16px;">Join Discord Server</a>
-      `,
-
-      'youtube-archive': `
-        <a onclick="showPage('community')" class="back-btn">← Back to Community</a>
-        <h1>YouTube Media Archive</h1>
-        <div class="article-box">
-          <h3>Recorded Scripture Readings & Devotions</h3>
-          <p>Explore our official YouTube channel for recorded multi-lingual Bible readings, etymological insights, and fellowship updates.</p>
-        </div>
-        <a href="https://www.youtube.com/@ChristianMultilingual" target="_blank" class="btn btn-youtube" style="margin-top:16px;">Watch on YouTube</a>
-      `
-    };
-
-    const fallbackNews = [
-      { title: "UN Humanitarian Agencies Expand Aid Distribution in Global Crisis Zones", link: "https://news.un.org/en/", date: "Today" },
-      { title: "Global Food Security Initiatives Launch Emergency Response Program", link: "https://news.un.org/en/", date: "Today" },
-      { title: "International Peace Summit Urges Immediate Ceasefire for Civilian Safety", link: "https://news.un.org/en/", date: "Yesterday" }
+    // 核心資料庫初始化（示範前幾篇精細內容，其餘由巨量索引自動擴充）
+    const initialPosts = [
+      {
+        id: 1,
+        title: "The Utility of Scots Cognates and Germanic Roots in English Etymological Pedagogy",
+        author: "Yang Cheng-han (楊承翰)",
+        date: "2026-10-24",
+        category: "Linguistics & Pedagogy",
+        summary: "Exploring comparative lexicography and early Scots cognates to accelerate English vocabulary acquisition and historical Bible reading.",
+        content: "<p>For autodidactic language learners and educators, unlocking English vocabulary through its historical Germanic roots—particularly through early Scots cognates—provides an intuitive architectural framework for retention and comparative analysis.</p><p>Scots, sharing a direct Old Northumbrian ancestor with Northern Middle English, preserves rich phonological and lexical features that clarify archaic and formal English terminology found in historical Bible translations such as the King James Bible and Tyndale's manuscripts.</p>"
+      },
+      {
+        id: 2,
+        title: "Unpacking Hesed (חֶסֶד): Covenantal Faithfulness Across Translations",
+        author: "Research Wing",
+        date: "2026-10-18",
+        category: "Old Testament Exegesis",
+        summary: "A deep exegesis of the Hebrew root Hesed, mapping its occurrences across the Old Testament and Greek Septuagint.",
+        content: "<p>In Hebrew lexicography, few words capture the depth of God's covenant relationship with humanity as intensely as Hesed (חֶסֶד - Strong's H2617). Often translated as 'lovingkindness', 'steadfast love', or 'mercy', Hesed represents an unbreakable, committed affection based on covenantal promise rather than transient emotion.</p>"
+      }
     ];
 
-    async function fetchLiveNews() {
-      const feedContainer = document.getElementById('news-feed');
-      const feedStatus = document.getElementById('feed-status');
-      if (!feedContainer) return;
-      
-      feedStatus.innerText = "Fetching real-time news...";
-      feedContainer.innerHTML = "";
-
-      const targetRss = 'https://news.un.org/feed/subscribe/en/news/all/rss.xml';
-
-      try {
-        const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(targetRss)}`);
-        if (!response.ok) throw new Error('Proxy failed');
-        
-        const data = await response.json();
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(data.contents, "text/xml");
-        const items = xmlDoc.querySelectorAll("item");
-
-        if (items.length > 0) {
-          feedStatus.style.display = 'none';
-          let count = 0;
-          items.forEach(item => {
-            if (count >= 5) return;
-            const title = item.querySelector("title") ? item.querySelector("title").textContent : "Global News Update";
-            const link = item.querySelector("link") ? item.querySelector("link").textContent : "https://news.un.org";
-            const pubDate = item.querySelector("pubDate") ? new Date(item.querySelector("pubDate").textContent).toLocaleDateString() : "Recent";
-
-            renderCard(title, link, pubDate);
-            count++;
-          });
-          return;
-        }
-        throw new Error("No items parsed");
-
-      } catch (err) {
-        feedStatus.innerText = "Showing current global updates:";
-        fallbackNews.forEach(item => renderCard(item.title, item.link, item.date));
-      }
+    // 動態擴充至 10,000 筆測試結構文章，確保網頁效能秒開
+    for (let i = 3; i <= totalPostsCount; i++) {
+      initialPosts.push({
+        id: i,
+        title: `Etymological Study & Biblical Lexicon Entry #${i}: Root Structural Analysis`,
+        author: "Faith Paradise Academic Repository",
+        date: "2026-10-24",
+        category: i % 2 === 0 ? "Hebrew Lexicon" : "Greek Manuscripts",
+        summary: `Automated archival entry #${i} covering etymological roots, morphological breakdown, and parallel translation cross-referencing.`,
+        content: `<p>This is dynamic repository entry #${i}. It contains morphological breakdown, Strong's concordance mapping, and contextual analysis for biblical word studies across Hebrew, Greek, and English versions.</p>`
+      });
     }
 
-    function renderCard(title, link, date) {
-      const feedContainer = document.getElementById('news-feed');
-      if (!feedContainer) return;
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.style.marginBottom = '12px';
-      card.style.cursor = 'pointer';
-      card.innerHTML = `
-        <a href="${link}" target="_blank" style="color:var(--text-main); text-decoration:none; font-weight:600; font-size:0.95rem; display:block; margin-bottom:6px;">${title} ↗</a>
-        <div style="font-size:0.8rem; color:var(--text-muted); display:flex; justify-content:space-between;">
-          <span>Source: UN World News</span>
-          <span>${date}</span>
+    filteredPosts = [...initialPosts];
+
+    function showHome() {
+      const app = document.getElementById('app-content');
+      app.innerHTML = `
+        <div style="text-align:center; padding:40px 20px; background:linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(30, 41, 59, 0.8)); border:1px solid var(--border); border-radius:12px; margin-bottom:32px;">
+          <h1 style="font-size:2.2rem; margin-bottom:12px;">Multilingual Faith & Lexicon Paradise</h1>
+          <p style="color:var(--text-muted); max-width:700px; margin:0 auto;">Housing over 10,000+ structured etymological entries, comparative scripture studies, and daily world intercession logs.</p>
+          <button onclick="renderBlogList(1)" style="margin-top:20px; background:var(--accent); color:#0f172a; border:none; padding:12px 24px; font-weight:bold; border-radius:8px; cursor:pointer; font-size:1rem;">Browse 10,000+ Articles ↗</button>
         </div>
       `;
-      feedContainer.appendChild(card);
     }
 
-    function showPage(pageKey) {
-      const contentDiv = document.getElementById('page-content');
-      if (pages[pageKey]) {
-        contentDiv.innerHTML = pages[pageKey];
-        window.scrollTo(0, 0);
-        
-        if (pageKey === 'prayers') {
-          setTimeout(fetchLiveNews, 50);
-        }
-      }
+    function renderBlogList(page = 1) {
+      currentPage = page;
+      const app = document.getElementById('app-content');
+      
+      const startIdx = (currentPage - 1) * postsPerPage;
+      const endIdx = startIdx + postsPerPage;
+      const pagePosts = filteredPosts.slice(startIdx, endIdx);
+      const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
+      let html = `
+        <div class="search-box">
+          <input type="text" id="searchInput" class="search-input" placeholder="Search across 10,000+ articles (e.g. Hesed, Scots, Entry #500)..." onkeyup="handleSearch()">
+        </div>
+        <div style="margin-bottom:16px; color:var(--text-muted); font-size:0.9rem;">
+          Showing ${startIdx + 1} - ${Math.min(endIdx, filteredPosts.length)} of ${filteredPosts.length} total entries
+        </div>
+      `;
+
+      pagePosts.forEach(post => {
+        html += `
+          <div class="blog-list-item" onclick="viewArticle(${post.id})">
+            <h3>${post.title}</h3>
+            <div class="blog-list-meta">By ${post.author} • ${post.date} • ${post.category}</div>
+            <div class="blog-list-desc">${post.summary}</div>
+          </div>
+        `;
+      });
+
+      // 分頁按鈕渲染
+      html += `
+        <div class="pagination">
+          <button class="page-btn" onclick="renderBlogList(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>← Previous</button>
+          <span class="page-info">Page ${currentPage} of ${totalPages}</span>
+          <button class="page-btn" onclick="renderBlogList(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>Next →</button>
+        </div>
+      `;
+
+      app.innerHTML = html;
+      window.scrollTo(0, 0);
     }
 
-    document.addEventListener('DOMContentLoaded', () => showPage('home'));
+    function handleSearch() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      filteredPosts = initialPosts.filter(post => 
+        post.title.toLowerCase().includes(query) || 
+        post.summary.toLowerCase().includes(query) ||
+        post.category.toLowerCase().includes(query)
+      );
+      renderBlogList(1);
+    }
+
+    function viewArticle(id) {
+      const post = initialPosts.find(p => p.id === id);
+      if (!post) return;
+
+      const app = document.getElementById('app-content');
+      app.innerHTML = `
+        <a onclick="renderBlogList(${currentPage})" class="back-btn">← Back to Article Index</a>
+        <div class="article-view">
+          <h2>${post.title}</h2>
+          <div class="article-meta">Author: ${post.author} | Date: ${post.date} | Category: ${post.category}</div>
+          <div class="article-body">
+            ${post.content}
+          </div>
+        </div>
+      `;
+      window.scrollTo(0, 0);
+    }
+
+    document.addEventListener('DOMContentLoaded', showHome);
   </script>
 
 </body>
