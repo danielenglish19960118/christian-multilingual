@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Languages | Christian Multilingual</title>
+  <style>
+    :root { --bg-color: #0f172a; --card-bg: #1e293b; --text-main: #f8fafc; --text-muted: #94a3b8; --accent: #38bdf8; --border: #334155; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; min-height: 100vh; padding: 20px; display: flex; justify-content: center; }
+    .container { max-width: 960px; width: 100%; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    nav { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; }
+    .logo { font-size: 1.3rem; font-weight: 700; color: var(--accent); text-decoration: none; margin-bottom: 16px; display: block; }
+    .nav-links { display: flex; gap: 12px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 6px 12px; border-radius: 6px; }
+    .nav-links a.active { color: var(--accent); background: rgba(56, 189, 248, 0.1); }
+    .lang-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+    .lang-card { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); padding: 20px; border-radius: 12px; text-align: center; }
+    .lang-card h3 { color: var(--accent); font-size: 1.1rem; margin-bottom: 6px; }
+    .lang-card p { color: var(--text-muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo">Faith Paradise</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resources.html">Bible Resources</a></li>
+        <li><a href="languages.html" class="active">Languages</a></li>
+        <li><a href="etymology.html">Etymology</a></li>
+        <li><a href="mentors.html">Mentors & Sponsors</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+    </nav>
+    <h1>Multilingual Language Wings</h1>
+    <p style="color: var(--text-muted);">Explore specific language study groups available within our community.</p>
+    <div class="lang-grid">
+      <div class="lang-card"><h3>English</h3><p>ESV / NIV / KJV Scriptural Study & Devotionals</p></div>
+      <div class="lang-card"><h3>Mandarin (中文)</h3><p>和合本 (CUV) & 雙語對照研讀</p></div>
+      <div class="lang-card"><h3>Japanese (日本語)</h3><p>新改訳・新共同訳 聖書勉強會</p></div>
+      <div class="lang-card"><h3>Korean (한국어)</h3><p>개역개정 성경 연구 및 기도회</p></div>
+      <div class="lang-card"><h3>Spanish (Español)</h3><p>Reina-Valera y estudios bíblicos</p></div>
+      <div class="lang-card"><h3>German (Deutsch)</h3><p>Lutherbibel & Linguistische Studien</p></div>
+    </div>
+  </div>
+</body>
+</html>
