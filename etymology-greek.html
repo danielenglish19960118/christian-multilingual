@@ -7,13 +7,13 @@
   <!-- Google Search Console Verification Tag -->
   <meta name="google-site-verification" content="81Aicyu58UFfFMLW-RMThNT_kYLKN4a_8huPibh3yCM" />
 
-  <title>Koine Greek Manuscript Studies & Lexical Exegesis Suite | Faith Paradise</title>
+  <title>Koine Greek Manuscript Studies & Advanced Exegesis Research Lab</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Chart.js for Manuscript Stats -->
+  <!-- Chart.js for Manuscript & Text-Type Statistics -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
@@ -28,11 +28,12 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
     body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.8; min-height: 100vh; display: flex; flex-direction: column; }
+    .serif-greek { font-family: "Times New Roman", Times, Georgia, serif; }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
 
-  <!-- Top Global Navigation -->
+  <!-- Top Global Navigation Bar -->
   <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between flex-wrap gap-4">
       <div class="flex items-center space-x-3">
@@ -40,17 +41,17 @@
           <i class="fa-solid fa-scroll text-sm"></i>
         </div>
         <div>
-          <span class="font-bold text-base tracking-tight block leading-none">Greek Codex <span class="text-amber-400 text-[10px] px-2 py-0.5 rounded bg-amber-950 border border-amber-800/50">SCHOLAR v4.2</span></span>
-          <span class="text-[10px] text-slate-400">Koine Morphology • Textual Criticism • Lexical Exegesis</span>
+          <span class="font-bold text-base tracking-tight block leading-none">Greek Codex <span class="text-amber-400 text-[10px] px-2 py-0.5 rounded bg-amber-950 border border-amber-800/50">RESEARCH LAB v6.0</span></span>
+          <span class="text-[10px] text-slate-400">Advanced Textual Criticism • Aspectual Morphology • Lexical Exegesis</span>
         </div>
       </div>
 
-      <!-- Tab Navigation -->
-      <nav class="flex items-center space-x-1 bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs">
-        <button onclick="switchTab('interlinear')" id="nav-interlinear" class="px-3.5 py-1.5 rounded-lg font-medium transition bg-amber-600 text-white shadow">Interlinear Lab</button>
-        <button onclick="switchTab('lexicon')" id="nav-lexicon" class="px-3.5 py-1.5 rounded-lg font-medium transition text-slate-400 hover:text-slate-200">Lexicon & Strong's</button>
-        <button onclick="switchTab('criticism')" id="nav-criticism" class="px-3.5 py-1.5 rounded-lg font-medium transition text-slate-400 hover:text-slate-200">Textual Criticism</button>
-        <button onclick="switchTab('sandbox')" id="nav-sandbox" class="px-3.5 py-1.5 rounded-lg font-medium transition text-slate-400 hover:text-slate-200">Morphology Sandbox</button>
+      <!-- Advanced Navigation Tabs -->
+      <nav class="flex items-center space-x-1 bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs flex-wrap">
+        <button onclick="switchTab('interlinear')" id="nav-interlinear" class="px-3 py-1.5 rounded-lg font-medium transition bg-amber-600 text-white shadow">1. Interlinear & Grammar</button>
+        <button onclick="switchTab('lexicon')" id="nav-lexicon" class="px-3 py-1.5 rounded-lg font-medium transition text-slate-400 hover:text-slate-200">2. Lexicon & Semantics</button>
+        <button onclick="switchTab('criticism')" id="nav-criticism" class="px-3 py-1.5 rounded-lg font-medium transition text-slate-400 hover:text-slate-200">3. Textual Criticism</button>
+        <button onclick="switchTab('sandbox')" id="nav-sandbox" class="px-3 py-1.5 rounded-lg font-medium transition text-slate-400 hover:text-slate-200">4. Morphology Sandbox</button>
       </nav>
 
       <div class="flex items-center space-x-3">
@@ -62,106 +63,84 @@
     </div>
   </header>
 
-  <!-- Main Workspace -->
+  <!-- Main Workspace Container -->
   <main class="flex-grow max-w-7xl mx-auto px-6 py-8 w-full space-y-6">
 
     <!-- ================= TAB 1: INTERLINEAR LAB ================= -->
     <div id="tab-interlinear" class="space-y-6">
-      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
-        <div class="flex justify-between items-center border-b border-slate-800 pb-3 flex-wrap gap-4">
+      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-5">
+        <div class="flex justify-between items-center border-b border-slate-800 pb-4 flex-wrap gap-4">
           <div>
-            <h2 class="text-lg font-bold text-amber-300">John 1:1-3 | Koine Greek Interlinear & Grammatical Analysis</h2>
-            <p class="text-xs text-slate-400">Click any word below to inspect morphological parsing, root derivations, and theological exegesis.</p>
+            <h2 class="text-xl font-bold text-amber-300">John 1:1-5 | Advanced Interlinear & Syntactical Parsing</h2>
+            <p class="text-xs text-slate-400">Click any Koine Greek term below to load professional lexical parsing, syntactical role, and exegetical commentary.</p>
           </div>
           <div class="flex items-center space-x-2 text-xs">
-            <span class="text-slate-400">Select Passage:</span>
-            <select class="bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5 text-slate-200 text-xs">
-              <option>John 1:1 - 1:5 (The Eternal Logos)</option>
-              <option>Philippians 2:5-11 (The Christ Hymn)</option>
-              <option>Romans 8:28-30 (The Golden Chain)</option>
+            <span class="text-slate-400">Passage Selector:</span>
+            <select id="passageSelector" onchange="loadPassage()" class="bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 text-xs outline-none focus:border-amber-500">
+              <option value="john1">John 1:1-3 (The Eternal Logos)</option>
+              <option value="phil2">Philippians 2:5-7 (The Kenosis Hymn)</option>
             </select>
           </div>
         </div>
 
-        <!-- Interlinear Grid Box -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 pt-2">
-          <div onclick="inspectWord('En arche', 'En', 'G1722', 'Preposition', 'In, on, among')" class="bg-slate-950 border border-slate-800 hover:border-amber-500/50 p-3 rounded-xl cursor-pointer transition space-y-1">
-            <span class="text-[10px] text-amber-400 font-mono">G1722</span>
-            <div class="text-base font-bold text-slate-100 font-serif">Ἐν</div>
-            <div class="text-xs text-slate-300">In / At</div>
-            <div class="text-[10px] text-slate-500 uppercase">Prep / Locative</div>
-          </div>
-          <div onclick="inspectWord('arche', 'ἀρχῇ', 'G746', 'Noun, Feminine', 'Beginning, origin, power')" class="bg-slate-950 border border-slate-800 hover:border-amber-500/50 p-3 rounded-xl cursor-pointer transition space-y-1">
-            <span class="text-[10px] text-amber-400 font-mono">G746</span>
-            <div class="text-base font-bold text-slate-100 font-serif">ἀρχῇ</div>
-            <div class="text-xs text-slate-300">Beginning</div>
-            <div class="text-[10px] text-slate-500 uppercase">Noun / Dat. Sg.</div>
-          </div>
-          <div onclick="inspectWord('en ho logos', 'ἦν', 'G1510', 'Verb, Imperfect', 'Was, existed continuously')" class="bg-slate-950 border border-slate-800 hover:border-amber-500/50 p-3 rounded-xl cursor-pointer transition space-y-1">
-            <span class="text-[10px] text-amber-400 font-mono">G1510</span>
-            <div class="text-base font-bold text-slate-100 font-serif">ἦν</div>
-            <div class="text-xs text-slate-300">was</div>
-            <div class="text-[10px] text-slate-500 uppercase">Verb / Impf. Act. 3S</div>
-          </div>
-          <div onclick="inspectWord('ho logos', 'ὁ', 'G3588', 'Def. Article', 'The (Masculine Nominative)')" class="bg-slate-950 border border-slate-800 hover:border-amber-500/50 p-3 rounded-xl cursor-pointer transition space-y-1">
-            <span class="text-[10px] text-amber-400 font-mono">G3588</span>
-            <div class="text-base font-bold text-slate-100 font-serif">ὁ</div>
-            <div class="text-xs text-slate-300">the</div>
-            <div class="text-[10px] text-slate-500 uppercase">Article / Nom. M. Sg.</div>
-          </div>
-          <div onclick="inspectWord('logos', 'λόγος', 'G3056', 'Noun, Masculine', 'Word, Statement, Divine Logos')" class="bg-slate-950 border border-slate-800 hover:border-amber-500/50 p-3 rounded-xl cursor-pointer transition space-y-1">
-            <span class="text-[10px] text-amber-400 font-mono">G3056</span>
-            <div class="text-base font-bold text-slate-100 font-serif">λόγος</div>
-            <div class="text-xs text-slate-300">Word</div>
-            <div class="text-[10px] text-slate-500 uppercase">Noun / Nom. M. Sg.</div>
-          </div>
-          <div onclick="inspectWord('kai ho logos', 'καὶ', 'G2532', 'Conjunction', 'And, also, even')" class="bg-slate-950 border border-slate-800 hover:border-amber-500/50 p-3 rounded-xl cursor-pointer transition space-y-1">
-            <span class="text-[10px] text-amber-400 font-mono">G2532</span>
-            <div class="text-base font-bold text-slate-100 font-serif">καὶ</div>
-            <div class="text-xs text-slate-300">and</div>
-            <div class="text-[10px] text-slate-500 uppercase">Conjunction</div>
-          </div>
+        <!-- Interlinear Grid -->
+        <div id="interlinearGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 pt-2">
+          <!-- Dynamically loaded via JS -->
         </div>
 
-        <!-- Detailed Inspection Panel -->
-        <div id="wordInspectionPanel" class="bg-slate-950 border border-amber-500/30 rounded-xl p-5 space-y-3 mt-4">
-          <div class="flex items-center justify-between">
+        <!-- Detailed Inspection Box -->
+        <div class="bg-slate-950 border border-amber-500/30 rounded-2xl p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
             <span class="text-xs font-mono text-amber-400 font-bold" id="inspectStrong">Strong's G3056</span>
             <span class="text-[10px] bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-800/50" id="inspectGrammar">Noun, Masculine Nominative Singular</span>
           </div>
-          <h3 class="text-xl font-bold text-white font-serif" id="inspectGreek">λόγος (Logos)</h3>
-          <p class="text-sm text-slate-300" id="inspectMeaning"><strong>Definition:</strong> Something said, including the thought; reason, word, divine expression or personified Word of God.</p>
-          <p class="text-xs text-slate-400" id="inspectContext"><strong>Contextual Exegesis:</strong> In John 1:1, *ho logos* refers eternally to the second person of the Trinity prior to incarnation, embodying divine rationality, creative agency, and supreme revelation.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <h3 class="text-2xl font-bold text-white serif-greek" id="inspectGreek">λόγος (Logos)</h3>
+              <p class="text-xs text-slate-300" id="inspectMeaning"><strong>Lexical Definition:</strong> Something said (including the thought); by implication, a topic, subject, or reasoning; personified as the divine Word.</p>
+            </div>
+            <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2 text-xs text-slate-300">
+              <strong class="text-amber-400 block">Syntactical & Theological Exegesis:</strong>
+              <p id="inspectExegesis">In John 1:1, the anarthrous use of 'Theos' contrasted with the arthrous 'ho logos' emphasizes qualitative divine essence rather than strict identity of person, safeguarding orthodox Trinitarian distinction while affirming absolute deity.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- ================= TAB 2: LEXICON & STRONG'S ================= -->
+    <!-- ================= TAB 2: LEXICON & SEMANTICS ================= -->
     <div id="tab-lexicon" class="hidden space-y-6">
       <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-5">
-        <div class="flex justify-between items-center border-b border-slate-800 pb-3 flex-wrap gap-4">
+        <div class="flex justify-between items-center border-b border-slate-800 pb-4 flex-wrap gap-4">
           <div>
-            <h2 class="text-lg font-bold text-amber-300">Comprehensive Greek Lexicon & Strong's Concordance</h2>
-            <p class="text-xs text-slate-400">Explore primary theological vocabulary with lexical frequency and semantic ranges.</p>
+            <h2 class="text-xl font-bold text-amber-300">Advanced Theological Lexicon & Semantic Domains</h2>
+            <p class="text-xs text-slate-400">Deep-dive into foundational New Testament vocabulary with frequency data and Louw-Nida semantic categories.</p>
           </div>
-          <input type="text" placeholder="Search Greek word or Strong's ID..." class="bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2 text-xs text-slate-200 outline-none focus:border-amber-500 w-64">
+          <div class="flex items-center space-x-2">
+            <input type="text" id="lexiconSearch" placeholder="Search Greek word or Strong's..." class="bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2 text-xs text-slate-200 outline-none focus:border-amber-500 w-64">
+          </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-2">
-            <div class="flex justify-between items-center"><span class="text-xs font-mono text-amber-400 font-bold">G26</span><span class="text-[10px] text-slate-500">Freq: 116</span></div>
-            <h4 class="text-base font-bold text-white font-serif">ἀγάπη (Agape)</h4>
-            <p class="text-xs text-slate-300">Unconditional, divine, self-sacrificial benevolence and goodwill.</p>
+          <div class="bg-slate-950 border border-slate-800 p-5 rounded-xl space-y-3">
+            <div class="flex justify-between items-center"><span class="text-xs font-mono text-amber-400 font-bold">G26 (ἀγάπη)</span><span class="text-[10px] bg-slate-900 text-slate-400 px-2 py-0.5 rounded">Freq: 116</span></div>
+            <h4 class="text-base font-bold text-white serif-greek">Agape — Unconditional Love</h4>
+            <p class="text-xs text-slate-400">Refers to God's volitional, self-sacrificial benevolence. Unlike <em>phileo</em> (affection), <em>agape</em> is anchored in character and deliberate choice.</p>
+            <div class="text-[11px] text-slate-500 pt-2 border-t border-slate-900 font-mono">Louw-Nida Domain: 25.43 (Love, Affection)</div>
           </div>
-          <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-2">
-            <div class="flex justify-between items-center"><span class="text-xs font-mono text-amber-400 font-bold">G5485</span><span class="text-[10px] text-slate-500">Freq: 155</span></div>
-            <h4 class="text-base font-bold text-white font-serif">χάρις (Charis)</h4>
-            <p class="text-xs text-slate-300">Grace, unmerited favor, loving-kindness, and spiritual enablement.</p>
+
+          <div class="bg-slate-950 border border-slate-800 p-5 rounded-xl space-y-3">
+            <div class="flex justify-between items-center"><span class="text-xs font-mono text-amber-400 font-bold">G5485 (χάρις)</span><span class="text-[10px] bg-slate-900 text-slate-400 px-2 py-0.5 rounded">Freq: 155</span></div>
+            <h4 class="text-base font-bold text-white serif-greek">Charis — Grace & Favor</h4>
+            <p class="text-xs text-slate-400">Unmerited divine favor and spiritual enablement bestowed upon believers for salvation and daily transformation.</p>
+            <div class="text-[11px] text-slate-500 pt-2 border-t border-slate-900 font-mono">Louw-Nida Domain: 88.66 (Graciousness, Mercy)</div>
           </div>
-          <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-2">
-            <div class="flex justify-between items-center"><span class="text-xs font-mono text-amber-400 font-bold">G1515</span><span class="text-[10px] text-slate-500">Freq: 92</span></div>
-            <h4 class="text-base font-bold text-white font-serif">εἰρήνη (Eirene)</h4>
-            <p class="text-xs text-slate-300">Peace, harmony, tranquility, and wholeness originating from God.</p>
+
+          <div class="bg-slate-950 border border-slate-800 p-5 rounded-xl space-y-3">
+            <div class="flex justify-between items-center"><span class="text-xs font-mono text-amber-400 font-bold">G2842 (κοινωνία)</span><span class="text-[10px] bg-slate-900 text-slate-400 px-2 py-0.5 rounded">Freq: 20</span></div>
+            <h4 class="text-base font-bold text-white serif-greek">Koinonia — Fellowship</h4>
+            <p class="text-xs text-slate-400">Intimate spiritual participation, communion, and joint contribution within the body of Christ.</p>
+            <div class="text-[11px] text-slate-500 pt-2 border-t border-slate-900 font-mono">Louw-Nida Domain: 34.52 (Association, Communion)</div>
           </div>
         </div>
       </div>
@@ -171,24 +150,24 @@
     <div id="tab-criticism" class="hidden space-y-6">
       <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-6">
         <div>
-          <h2 class="text-lg font-bold text-amber-300">New Testament Textual Criticism & Manuscript Families</h2>
-          <p class="text-xs text-slate-400">Analysis of papyri, uncials, minuscules, and text types (Alexandrian, Byzantine, Western).</p>
+          <h2 class="text-xl font-bold text-amber-300">Textual Criticism & Manuscript Witness Distribution</h2>
+          <p class="text-xs text-slate-400">Comparative analysis of Alexandrian, Byzantine, Western, and Caesarean text-types across Greek uncials and minuscules.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <div class="space-y-4 text-xs text-slate-300">
             <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-2">
-              <strong class="text-amber-400 block">Alexandrian Text-Type (e.g., Codex Sinaiticus, Vaticanus)</strong>
-              <p>Characterized by concise, early readings dating back to the 2nd–3rd centuries. Highly prioritized in modern critical editions (NA28 / UBS5).</p>
+              <strong class="text-amber-400 block">1. Alexandrian Text-Type (P75, Codex Sinaiticus א, Codex Vaticanus B)</strong>
+              <p>Dated to the 2nd–4th centuries. Noted for brevity, strict accuracy, and careful scribal preservation without harmonization tendencies.</p>
             </div>
             <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-2">
-              <strong class="text-amber-400 block">Byzantine Text-Type (Majority Text)</strong>
-              <p>Represented by the vast majority of medieval minuscule manuscripts. Smooth and full in expression, forming the basis of the Textus Receptus.</p>
+              <strong class="text-amber-400 block">2. Byzantine Text-Type (Majority Text & Textus Receptus)</strong>
+              <p>Comprises over 80% of surviving medieval minuscules. Highly polished, liturgical, and expansive, forming the foundation of the King James Bible.</p>
             </div>
           </div>
 
-          <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 h-[260px] flex items-center justify-center">
-            <canvas id="manuscriptPie"></canvas>
+          <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 h-[280px] flex items-center justify-center">
+            <canvas id="manuscriptPieChart"></canvas>
           </div>
         </div>
       </div>
@@ -198,34 +177,46 @@
     <div id="tab-sandbox" class="hidden space-y-6">
       <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-5">
         <div>
-          <h2 class="text-lg font-bold text-amber-300">Koine Greek Verbal Tense & Mood Parsing Simulator</h2>
-          <p class="text-xs text-slate-400">Test verb stems and inflection endings across Aorist, Present, and Perfect systems.</p>
+          <h2 class="text-xl font-bold text-amber-300">Interactive Koine Greek Aspectual Morphology & Verb Parsing Engine</h2>
+          <p class="text-xs text-slate-400">Select verb stems, voices, and tenses to generate full paradigmatic inflections.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Select Verb Root</label>
-            <select id="verbSelect" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-slate-200 text-xs">
-              <option value="λύω (Luo) - To Loose / Untie">λύω (Luo) - To Loose / Untie</option>
-              <option value="πιστεύω (Pisteuo) - To Believe / Trust">πιστεύω (Pisteuo) - To Believe / Trust</option>
-              <option value="γινώσκω (Ginosko) - To Know / Understand">γινώσκω (Ginosko) - To Know / Understand</option>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Verb Lexeme</label>
+            <select id="sandboxVerb" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-slate-200 text-xs outline-none">
+              <option value="λύω (Luo) - To Untie / Loose">λύω (Luo) - To Untie / Loose</option>
+              <option value="πιστεύω (Pisteuo) - To Believe / Entrust">πιστεύω (Pisteuo) - To Believe / Entrust</option>
+              <option value="γράφω (Grapho) - To Write / Inscribe">γράφω (Grapho) - To Write / Inscribe</option>
             </select>
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Select Tense & Voice</label>
-            <select id="tenseSelect" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-slate-200 text-xs">
-              <option>Present Active Indicative (1st Person Singular)</option>
-              <option>Aorist Active Indicative (3rd Person Singular)</option>
-              <option>Perfect Active Participle</option>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Tense & Aspect</label>
+            <select id="sandboxTense" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-slate-200 text-xs outline-none">
+              <option value="Present (Linear / Ongoing Aspect)">Present (Linear / Ongoing Aspect)</option>
+              <option value="Aorist (Punctiliar / Summary Aspect)">Aorist (Punctiliar / Summary Aspect)</option>
+              <option value="Perfect (Completed Action with Resultant State)">Perfect (Completed Action with Resultant State)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Mood & Voice</label>
+            <select id="sandboxMood" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-slate-200 text-xs outline-none">
+              <option value="Indicative Mood (Statement of Reality) - Active Voice">Indicative (Statement of Reality) - Active</option>
+              <option value="Subjunctive Mood (Potential / Contingent) - Middle">Subjunctive (Contingent) - Middle</option>
             </select>
           </div>
         </div>
 
-        <button onclick="parseVerb()" class="w-full bg-amber-600 hover:bg-amber-500 text-slate-950 font-bold py-3 rounded-xl text-xs transition">Execute Morphological Parse</button>
+        <button onclick="executeSandboxParse()" class="w-full bg-amber-600 hover:bg-amber-500 text-slate-950 font-bold py-3 rounded-xl text-xs transition">Run Comprehensive Morphological Analysis</button>
 
-        <div id="parseResult" class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs font-mono text-slate-300 hidden space-y-2">
-          <span class="text-amber-400 font-bold">// PARSING RESULT:</span>
-          <p id="parseOutputText">Form successfully analyzed.</p>
+        <div id="sandboxResult" class="bg-slate-950 border border-slate-800 rounded-xl p-5 text-xs font-mono text-slate-300 hidden space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+            <span class="text-amber-400 font-bold">// MORPHOLOGICAL PARSING & PARADIGM REPORT</span>
+            <span class="text-[10px] text-slate-500">Aspectual Linguistics v2.4</span>
+          </div>
+          <div id="sandboxOutputText" class="space-y-2 leading-relaxed">
+            <!-- Output populated by JS -->
+          </div>
         </div>
       </div>
     </div>
@@ -234,7 +225,7 @@
 
   <!-- Footer -->
   <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500 mt-auto space-y-2">
-    <div>Koine Greek Manuscript & Exegesis Suite &copy; 2026. Christian Multilingual Faith Paradise.</div>
+    <div>Koine Greek Manuscript & Advanced Exegesis Research Lab &copy; 2026. Christian Multilingual Faith Paradise.</div>
     <div>
       <a href="index.html" class="text-amber-400 hover:underline">← Return to Yang Cheng-han (楊承翰) Portfolio Hub</a>
     </div>
@@ -242,43 +233,74 @@
 
   <!-- Script Logic -->
   <script>
+    const passages = {
+      john1: [
+        { greek: "Ἐν", translit: "En", strong: "G1722", grammar: "Prep / Locative", meaning: "In, on, among", exegesis: "Indicates spatial or sphere inclusion." },
+        { greek: "ἀρχῇ", translit: "arche", strong: "G746", grammar: "Noun, Fem. Dat. Sg.", meaning: "Beginning, origin", exegesis: "Refers to the absolute eternity prior to creation." },
+        { greek: "ἦν", translit: "en", strong: "G1510", grammar: "Verb, Impf. Act. 3S", meaning: "Was (continuous existence)", exegesis: "Imperfect tense denotes continuous background existence without a starting point." },
+        { greek: "ὁ", translit: "ho", strong: "G3588", grammar: "Def. Article, Nom. M. Sg.", meaning: "The", exegesis: "Definite article individualizes the subject." },
+        { greek: "λόγος", translit: "logos", strong: "G3056", grammar: "Noun, Nom. M. Sg.", meaning: "Word, Divine Statement", exegesis: "The personal incarnate Son of God embodying divine logic and revelation." },
+        { greek: "καὶ", translit: "kai", strong: "G2532", grammar: "Conjunction", meaning: "And, also", exegesis: "Connects coordinate clauses with cumulative force." }
+      ],
+      phil2: [
+        { greek: "τοῦτο", translit: "touto", strong: "G5124", grammar: "Pronoun, Neut. Acc. Sg.", meaning: "This thing", exegesis: "Points forward to the subsequent mind of Christ." },
+        { greek: "φρονεῖτε", translit: "phroneite", strong: "G5426", grammar: "Verb, Pres. Act. Imperative 2P", meaning: "Have this mind / attitude", exegesis: "Present imperative commands a continuous lifestyle posture." },
+        { greek: "ἐν", translit: "en", strong: "G1722", grammar: "Prep / Locative", meaning: "In", exegesis: "Denotes the spiritual sphere of union." },
+        { greek: "ὑμῖν", translit: "humin", strong: "G5213", grammar: "Pronoun, Dat. Pl.", meaning: "You all", exegesis: "Plural addressees within the local assembly." },
+        { greek: "ὃ", translit: "ho", strong: "G3739", grammar: "Relative Pronoun", meaning: "Which / Who", exegesis: "Relates back to the pre-incarnate posture of Christ." },
+        { greek: "καὶ", translit: "kai", strong: "G2532", grammar: "Conjunction", meaning: "Also / Even", exegesis: "Reinforces the historical reality." }
+      ]
+    };
+
+    function loadPassage() {
+      const key = document.getElementById('passageSelector').value;
+      const data = passages[key];
+      const grid = document.getElementById('interlinearGrid');
+      grid.innerHTML = '';
+      data.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = "bg-slate-950 border border-slate-800 hover:border-amber-500/50 p-3 rounded-xl cursor-pointer transition space-y-1";
+        div.onclick = () => renderInspection(item);
+        div.innerHTML = `
+          <span class="text-[10px] text-amber-400 font-mono">${item.strong}</span>
+          <div class="text-base font-bold text-slate-100 serif-greek">${item.greek}</div>
+          <div class="text-xs text-slate-300">${item.meaning.split(',')[0]}</div>
+          <div class="text-[10px] text-slate-500 uppercase">${item.grammar.split(',')[0]}</div>
+        `;
+        grid.appendChild(div);
+      });
+      renderInspection(data[0]);
+    }
+
+    function renderInspection(item) {
+      document.getElementById('inspectStrong').innerText = "Strong's " + item.strong;
+      document.getElementById('inspectGrammar').innerText = item.grammar;
+      document.getElementById('inspectGreek').innerText = `${item.greek} (${item.translit})`;
+      document.getElementById('inspectMeaning').innerHTML = `<strong>Lexical Definition:</strong> ${item.meaning}.`;
+      document.getElementById('inspectExegesis').innerText = item.exegesis;
+    }
+
     function switchTab(tabId) {
       ['interlinear', 'lexicon', 'criticism', 'sandbox'].forEach(id => {
         document.getElementById(`tab-${id}`).classList.add('hidden');
-        document.getElementById(`nav-${id}`).className = "px-3.5 py-1.5 rounded-lg font-medium transition text-slate-400 hover:text-slate-200";
+        document.getElementById(`nav-${id}`).className = "px-3 py-1.5 rounded-lg font-medium transition text-slate-400 hover:text-slate-200";
       });
       document.getElementById(`tab-${tabId}`).classList.remove('hidden');
-      document.getElementById(`nav-${tabId}`).className = "px-3.5 py-1.5 rounded-lg font-medium transition bg-amber-600 text-white shadow";
+      document.getElementById(`nav-${tabId}`).className = "px-3 py-1.5 rounded-lg font-medium transition bg-amber-600 text-white shadow";
       if(tabId === 'criticism') {
         setTimeout(initCriticismChart, 100);
       }
     }
 
-    function inspectWord(name, greek, strong, grammar, meaning) {
-      document.getElementById('inspectStrong').innerText = "Strong's " + strong;
-      document.getElementById('inspectGrammar').innerText = grammar;
-      document.getElementById('inspectGreek').innerText = greek + " (" + name + ")";
-      document.getElementById('inspectMeaning').innerHTML = "<strong>Definition:</strong> " + meaning;
-    }
-
-    function parseVerb() {
-      const v = document.getElementById('verbSelect').value;
-      const t = document.getElementById('tenseSelect').value;
-      const res = document.getElementById('parseResult');
-      const out = document.getElementById('parseOutputText');
-      res.classList.remove('hidden');
-      out.innerHTML = `Root: <strong>${v}</strong><br>Morphology: <strong>${t}</strong><br>Semantic Value: Indicates completed or ongoing verbal action in Koine aspectual time.`;
-    }
-
-    let chartInited = false;
+    let chartInitialized = false;
     function initCriticismChart() {
-      const ctx = document.getElementById('manuscriptPie');
-      if(ctx && !chartInited) {
-        chartInited = true;
+      const ctx = document.getElementById('manuscriptPieChart');
+      if(ctx && !chartInitialized) {
+        chartInitialized = true;
         new Chart(ctx, {
           type: 'doughnut',
           data: {
-            labels: ['Byzantine (Majority)', 'Alexandrian', 'Western / Caesarean', 'Papyri / Early Uncials'],
+            labels: ['Byzantine (Majority Text - 80%)', 'Alexandrian (Early Papyri & Uncials - 12%)', 'Western (Codex Bezae - 5%)', 'Caesarean (3%)'],
             datasets: [{
               data: [80, 12, 5, 3],
               backgroundColor: ['#fbbf24', '#38bdf8', '#818cf8', '#22c55e']
@@ -287,11 +309,33 @@
           options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', boxWidth: 12 } } }
+            plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', boxWidth: 12, font: { size: 10 } } } }
           }
         });
       }
     }
+
+    function executeSandboxParse() {
+      const verb = document.getElementById('sandboxVerb').value;
+      const tense = document.getElementById('sandboxTense').value;
+      const mood = document.getElementById('sandboxMood').value;
+      const resultBox = document.getElementById('sandboxResult');
+      const output = document.getElementById('sandboxOutputText');
+
+      resultBox.classList.remove('hidden');
+      output.innerHTML = `
+        <div>• <strong>Selected Lexeme:</strong> ${verb}</div>
+        <div>• <strong>Aspectual Vector:</strong> ${tense}</div>
+        <div>• <strong>Mood / Voice Matrix:</strong> ${mood}</div>
+        <div class="pt-2 border-t border-slate-800">
+          <strong>Paradigmatic Analysis:</strong> In Koine Greek aspectual grammar, the verb stem operates primarily on <em>Aktionsart</em> (kind of action) rather than strict chronological time in the indicative. This morphological form conveys continuous or structural reality within the discourse framework.
+        </div>
+      `;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadPassage();
+    });
   </script>
 
 </body>
