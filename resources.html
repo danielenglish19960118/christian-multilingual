@@ -8,73 +8,60 @@
     :root { --bg-color: #0f172a; --card-bg: #1e293b; --text-main: #f8fafc; --text-muted: #94a3b8; --accent: #38bdf8; --border: #334155; }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
     body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; min-height: 100vh; padding: 20px; display: flex; justify-content: center; }
-    .container { max-width: 900px; width: 100%; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
-    
-    nav { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; }
-    .logo { font-size: 1.2rem; font-weight: 700; color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 8px; }
-    .nav-links { display: flex; gap: 16px; list-style: none; }
-    .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; }
-    .nav-links a.active { color: var(--accent); }
-
-    .resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 24px; }
-    .resource-card { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-decoration: none; color: inherit; transition: all 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
-    .resource-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-    .icon-box { width: 48px; height: 48px; background: rgba(56, 189, 248, 0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-    .icon-box svg { width: 28px; height: 28px; fill: var(--accent); }
-    .title { font-size: 1.2rem; font-weight: 600; color: var(--accent); margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
-    .desc { color: var(--text-muted); font-size: 0.95rem; }
+    .container { max-width: 960px; width: 100%; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    nav { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; }
+    .logo { font-size: 1.3rem; font-weight: 700; color: var(--accent); text-decoration: none; margin-bottom: 16px; display: block; }
+    .nav-links { display: flex; gap: 12px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 6px 12px; border-radius: 6px; }
+    .nav-links a.active { color: var(--accent); background: rgba(56, 189, 248, 0.1); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 24px; }
+    .card { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); padding: 24px; border-radius: 12px; text-decoration: none; color: inherit; transition: all 0.2s; }
+    .card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .card-icon { width: 44px; height: 44px; background: rgba(56, 189, 248, 0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .card-icon svg { width: 26px; height: 26px; fill: var(--accent); }
+    .title { font-size: 1.2rem; color: var(--accent); margin-bottom: 8px; display: flex; justify-content: space-between; }
+    .desc { color: var(--text-muted); font-size: 0.9rem; }
   </style>
 </head>
 <body>
-
   <div class="container">
     <nav>
       <a href="index.html" class="logo">Faith Paradise</a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="resources.html" class="active">Bible Resources</a></li>
+        <li><a href="languages.html">Languages</a></li>
+        <li><a href="etymology.html">Etymology</a></li>
         <li><a href="mentors.html">Mentors & Sponsors</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="faq.html">FAQ</a></li>
         <li><a href="community.html">Community</a></li>
       </ul>
     </nav>
-
-    <h1 style="color: var(--text-main); margin-bottom: 8px;">Online English Bible Resources</h1>
-    <p style="color: var(--text-muted); margin-bottom: 24px;">Explore trusted lexicographical tools, parallel English translations, and audio Bibles.</p>
-
-    <div class="resource-grid">
-      <a href="https://www.biblegateway.com/" target="_blank" class="resource-card">
-        <div>
-          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.82 9L12 4.57 20.18 9 12 13.43 3.82 9z"/></svg></div>
-          <div class="title">BibleGateway <span>↗</span></div>
-          <div class="desc">Access NIV, ESV, KJV and 200+ parallel multi-lingual Bible translations with topical search.</div>
-        </div>
+    <h1>Online English Bible Resources</h1>
+    <p style="color: var(--text-muted);">Trusted English translations, interlinear study tools, and multi-lingual audio Bibles.</p>
+    <div class="grid">
+      <a href="https://www.biblegateway.com/" target="_blank" class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.82 9L12 4.57 20.18 9 12 13.43 3.82 9z"/></svg></div>
+        <div class="title">BibleGateway <span>↗</span></div>
+        <div class="desc">Search NIV, ESV, KJV and parallel translations across dozens of global languages.</div>
       </a>
-
-      <a href="https://www.blueletterbible.org/" target="_blank" class="resource-card">
-        <div>
-          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg></div>
-          <div class="title">Blue Letter Bible <span>↗</span></div>
-          <div class="desc">Advanced study suites including Hebrew & Greek Strong's Concordance, interlinear tools, and commentaries.</div>
-        </div>
+      <a href="https://www.blueletterbible.org/" target="_blank" class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg></div>
+        <div class="title">Blue Letter Bible <span>↗</span></div>
+        <div class="desc">Original Hebrew/Greek lexicons, Strong's concordance, and verse-by-verse commentaries.</div>
       </a>
-
-      <a href="https://www.bible.com/" target="_blank" class="resource-card">
-        <div>
-          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
-          <div class="title">YouVersion Bible <span>↗</span></div>
-          <div class="desc">Interactive daily devotionals, verse-of-the-day graphics, and global community reading plans.</div>
-        </div>
+      <a href="https://www.bible.com/" target="_blank" class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+        <div class="title">YouVersion Bible <span>↗</span></div>
+        <div class="desc">Interactive devotionals, daily verse plans, and global reading groups.</div>
       </a>
-
-      <a href="https://www.bible.com/audio-bible-app" target="_blank" class="resource-card">
-        <div>
-          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg></div>
-          <div class="title">YouVersion Audio Bible <span>↗</span></div>
-          <div class="desc">High-quality audio narrations across English versions for immersive listening during daily routines.</div>
-        </div>
+      <a href="https://www.bible.com/audio-bible-app" target="_blank" class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg></div>
+        <div class="title">YouVersion Audio Bible <span>↗</span></div>
+        <div class="desc">High-quality narrated audio Bibles for listening during daily study or commuting.</div>
       </a>
     </div>
   </div>
-
 </body>
 </html>
