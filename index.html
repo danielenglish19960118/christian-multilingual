@@ -26,7 +26,7 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
     body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; min-height: 100vh; padding: 20px; display: flex; justify-content: center; }
-    .container { max-width: 960px; width: 100%; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+    .container { max-width: 980px; width: 100%; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
 
     /* 下拉選單導覽列 */
     nav { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; }
@@ -74,7 +74,6 @@
     .btn-youtube { background-color: var(--youtube-red); }
 
     .back-btn { display: inline-block; color: var(--accent); text-decoration: none; font-weight: 600; margin-bottom: 16px; cursor: pointer; }
-
     .footer { border-top: 1px solid var(--border); margin-top: 32px; padding-top: 20px; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
   </style>
 </head>
@@ -160,7 +159,7 @@
     </div>
   </div>
 
-  <!-- 完整的單頁路由與即時新聞抓取邏輯 -->
+  <!-- 應用程式核心邏輯與頁面定義 -->
   <script>
     const pages = {
       'home': `
@@ -216,23 +215,23 @@
       'about-mission': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Our Mission & Vision</h1>
-        <div class="card" style="cursor:default;">
+        <div class="card" style="cursor:default; margin-top:16px;">
           <h3>Cross-Cultural Faith & Language Ministry</h3>
-          <p>Equipping believers and language learners worldwide with scripture resources, etymological insights, and global prayer fellowship.</p>
+          <p>Christian Multilingual Faith Paradise serves as a global hub empowering believers and language learners to engage with Holy Scripture across diverse languages, cultivate etymological insights, and unite in real-time intercession.</p>
         </div>
       `,
       'statement-of-faith': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Statement of Faith</h1>
-        <div class="card" style="cursor:default;">
-          <h3>Core Theological Foundations</h3>
-          <p>We confess historical Christian orthodox faith, the authority of divine Scripture, and the unity of believers across all nations.</p>
+        <div class="card" style="cursor:default; margin-top:16px;">
+          <h3>Core Theological Beliefs</h3>
+          <p>We hold to the historical Christian faith, confessing the divine inspiration and authority of Scripture, the deity of Christ, and the spiritual unity of all believers across global languages.</p>
         </div>
       `,
       'resources': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Online English Bible Resources</h1>
-        <div class="grid">
+        <div class="grid" style="margin-top:20px;">
           <div onclick="showPage('parallel-translations')" class="card"><h3>Parallel Translations ↗</h3><p>Compare NIV, ESV, KJV, and CUV side-by-side.</p></div>
           <div onclick="showPage('audio-bibles')" class="card"><h3>Audio Bibles & Podcasts ↗</h3><p>Listen to narrated scriptures and devotions.</p></div>
           <div onclick="showPage('lexicons-tools')" class="card"><h3>Lexicons & Study Tools ↗</h3><p>Strong's concordance and Greek/Hebrew lexicons.</p></div>
@@ -241,17 +240,17 @@
       'parallel-translations': `
         <a onclick="showPage('resources')" class="back-btn">← Back to Resources</a>
         <h1>Parallel English & Multilingual Translations</h1>
-        <div class="card" style="cursor:default;"><h3>ESV & CUV Formal Equivalence</h3><p>Word-for-word cross-referencing between modern English and traditional Chinese Bible manuscripts.</p></div>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>ESV & CUV Formal Equivalence Study</h3><p>Aligning the English Standard Version (ESV) alongside Chinese Union Version (CUV 和合本) to compare word choice and theological precision.</p></div>
       `,
       'audio-bibles': `
         <a onclick="showPage('resources')" class="back-btn">← Back to Resources</a>
         <h1>Audio Bibles & Narrated Scripture</h1>
-        <div class="card" style="cursor:default;"><h3>Immersive Audio Devotions</h3><p>High-quality audio Bibles via YouVersion and international audio providers.</p></div>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>Narrated Scripture Listening</h3><p>High-quality audio streams and daily Bible listening plans from YouVersion and global spoken-word audio partners.</p></div>
       `,
       'lexicons-tools': `
         <a onclick="showPage('resources')" class="back-btn">← Back to Resources</a>
         <h1>Original Language Lexicons</h1>
-        <div class="card" style="cursor:default;"><h3>Blue Letter Bible Interlinear</h3><p>Greek and Hebrew root word parsing, lexicons, and concordance search tools.</p></div>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>Blue Letter Bible Interlinear Lexicons</h3><p>Explore Strong's Greek and Hebrew concordance parsing, word-root dictionaries, and cross-referencing commentaries.</p></div>
       `,
       'prayers': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
@@ -282,17 +281,17 @@
       'crisis-relief': `
         <a onclick="showPage('prayers')" class="back-btn">← Back to World Prayers</a>
         <h1>Crisis Relief Intercession</h1>
-        <div class="card" style="cursor:default;"><h3>Humanitarian & Peace Prayer Points</h3><p>Lifting up displaced families, healthcare workers, and peacekeeping initiatives worldwide.</p></div>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>Humanitarian Disaster Relief Focus</h3><p>Targeted scripture intercession points for regions affected by conflict, drought, displaced populations, and ongoing relief worker protection.</p></div>
       `,
       'intercession-log': `
         <a onclick="showPage('prayers')" class="back-btn">← Back to World Prayers</a>
         <h1>Intercession Archive Log</h1>
-        <div class="card" style="cursor:default;"><h3>Weekly Prayer Summaries</h3><p>Documented global prayer focuses across Eastern Europe, Middle East, and Africa.</p></div>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>Weekly Global Prayer Summaries</h3><p>Archived intercession logs from Eastern Europe, Middle East, Horn of Africa, and global natural disaster recovery efforts.</p></div>
       `,
       'languages': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Language Fellowship Wings</h1>
-        <div class="grid">
+        <div class="grid" style="margin-top:20px;">
           <div onclick="showPage('lang-english')" class="card"><h3>English Wing ↗</h3></div>
           <div onclick="showPage('lang-mandarin')" class="card"><h3>Mandarin Wing (中文) ↗</h3></div>
           <div onclick="showPage('lang-global')" class="card"><h3>Global Wings ↗</h3></div>
@@ -300,41 +299,41 @@
       `,
       'lang-english': `
         <a onclick="showPage('languages')" class="back-btn">← Back to Languages</a>
-        <h1>English Language Fellowship Wing</h1>
-        <div class="card" style="cursor:default;"><h3>English Writing & Devotions</h3><p>Practice writing and reading in English alongside global Christian peers.</p></div>
+        <h1>English Fellowship Wing</h1>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>English Devotions & Writing Practice</h3><p>Engage in daily scripture writing, English devotional exchanges, and multi-lingual study circles.</p></div>
       `,
       'lang-mandarin': `
         <a onclick="showPage('languages')" class="back-btn">← Back to Languages</a>
-        <h1>Mandarin Wing (華語專區)</h1>
-        <div class="card" style="cursor:default;"><h3>雙語經文研讀</h3><p>和合本與英文雙語對照研讀及分享小組。</p></div>
+        <h1>Mandarin Wing (華語研讀專區)</h1>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>雙語經文研讀與對照</h3><p>提供和合本 (CUV) 與英文譯本對照研讀，包含查經小組與屬靈交流頻道。</p></div>
       `,
       'lang-global': `
         <a onclick="showPage('languages')" class="back-btn">← Back to Languages</a>
         <h1>Global Language Wings</h1>
-        <div class="card" style="cursor:default;"><h3>Japanese, Korean, Spanish & German</h3><p>Dedicated multi-lingual channels for language study and fellowship.</p></div>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>Japanese, Korean, Spanish & European Wings</h3><p>Dedicated channels for multi-lingual believers across Japanese (日本語), Korean (한국어), Spanish (Español), and German (Deutsch).</p></div>
       `,
       'etymology': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Scriptural Etymology</h1>
-        <div class="grid">
+        <div class="grid" style="margin-top:20px;">
           <div onclick="showPage('etymology-hebrew')" class="card"><h3>Hebrew Roots ↗</h3></div>
           <div onclick="showPage('etymology-greek')" class="card"><h3>Greek Manuscripts ↗</h3></div>
         </div>
       `,
       'etymology-hebrew': `
         <a onclick="showPage('etymology')" class="back-btn">← Back to Etymology</a>
-        <h1>Hebrew Root Studies (Old Testament)</h1>
-        <div class="card" style="cursor:default;"><h3>Hesed & Shalom Analysis</h3><p>Exploring the historical roots of divine covenantal faithfulness and wholeness.</p></div>
+        <h1>Hebrew Lexical Roots (Old Testament)</h1>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>Hesed (חֶסֶד) & Shalom (שָׁלוֹם) Analysis</h3><p>Exploring Old Testament root words, covenantal faithfulness (Hesed), and divine completeness and peace (Shalom).</p></div>
       `,
       'etymology-greek': `
         <a onclick="showPage('etymology')" class="back-btn">← Back to Etymology</a>
         <h1>Greek Manuscript Studies (New Testament)</h1>
-        <div class="card" style="cursor:default;"><h3>Agape & Logos Parsing</h3><p>Examining Koine Greek manuscript roots and theological precision.</p></div>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>Agape (ἀγάπη) & Logos (λόγος) Parsing</h3><p>Examining Koine Greek manuscript traditions, grammatical parsing, and historical theological nuances.</p></div>
       `,
       'mentors': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Mentors & Partner Organizations</h1>
-        <div class="grid">
+        <div class="grid" style="margin-top:20px;">
           <div onclick="showPage('advisory-board')" class="card"><h3>Scholar Advisory Board ↗</h3></div>
           <div onclick="showPage('sponsor-portal')" class="card"><h3>Sponsor Partnership ↗</h3></div>
         </div>
@@ -342,22 +341,22 @@
       'advisory-board': `
         <a onclick="showPage('mentors')" class="back-btn">← Back to Mentors</a>
         <h1>Scholar Advisory Board</h1>
-        <div class="card" style="cursor:default;"><h3>Honored Scholars & Predecessors</h3><p>Honoring senior educators and theologians who guide our community's scope.</p></div>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>Honored Scholars & Linguists</h3><p>Paying tribute to distinguished academic scholars and spiritual predecessors whose scholarly literature guides our linguistic and educational initiatives.</p></div>
       `,
       'sponsor-portal': `
         <a onclick="showPage('mentors')" class="back-btn">← Back to Mentors</a>
-        <h1>Sponsor & Partner Inquiry</h1>
-        <form action="https://formspree.io/f/myeezkkw" method="POST" class="sponsor-form">
-          <div class="form-group"><label>Name: </label><input type="text" name="name" required class="form-control"></div>
-          <div class="form-group"><label>Email: </label><input type="email" name="email" required class="form-control"></div>
-          <div class="form-group"><label>Proposal: </label><textarea name="message" required class="form-control"></textarea></div>
-          <button type="submit" class="btn btn-accent">Submit Partnership Proposal</button>
+        <h1>Sponsor & Organization Partnership</h1>
+        <form action="https://formspree.io/f/myeezkkw" method="POST" class="sponsor-form" style="margin-top:16px;">
+          <div class="form-group"><label>Organization / Name</label><input type="text" name="name" class="form-control" required placeholder="Organization title"></div>
+          <div class="form-group"><label>Email Address</label><input type="email" name="email" class="form-control" required placeholder="danielenglish19960118@gmail.com"></div>
+          <div class="form-group"><label>Partnership Proposal</label><textarea name="message" class="form-control" required placeholder="Share your proposal..."></textarea></div>
+          <button type="submit" class="btn btn-accent">Send Proposal</button>
         </form>
       `,
       'schedule': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Gathering Schedule & Hours</h1>
-        <div class="grid">
+        <div class="grid" style="margin-top:20px;">
           <div onclick="showPage('coworking-schedule')" class="card"><h3>Co-Working Hours ↗</h3></div>
           <div onclick="showPage('prayer-hours')" class="card"><h3>Global Prayer Hours ↗</h3></div>
         </div>
@@ -365,17 +364,17 @@
       'coworking-schedule': `
         <a onclick="showPage('schedule')" class="back-btn">← Back to Schedule</a>
         <h1>Silent Co-Working Hours</h1>
-        <div class="card" style="cursor:default;"><h3>24/7 Study Lounges</h3><p>Focus study rooms for scripture reflection and translation work.</p></div>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>24/7 Focus Voice Lounges</h3><p>Dedicated silent study rooms on Discord engineered for reading, lexicographical research, translation work, and focused study.</p></div>
       `,
       'prayer-hours': `
         <a onclick="showPage('schedule')" class="back-btn">← Back to Schedule</a>
         <h1>Global Prayer Hours</h1>
-        <div class="card" style="cursor:default;"><h3>Weekly Prayer Calls</h3><p>Gatherings on Discord for joint intercession and prayer requests.</p></div>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>Weekly Prayer Calls</h3><p>Gatherings on Discord for joint intercession and prayer requests.</p></div>
       `,
       'community': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Community Platforms</h1>
-        <div class="grid">
+        <div class="grid" style="margin-top:20px;">
           <div onclick="showPage('whatsapp-rules')" class="card"><h3>WhatsApp Rules ↗</h3></div>
           <div onclick="showPage('discord-guide')" class="card"><h3>Discord Guide ↗</h3></div>
           <div onclick="showPage('youtube-archive')" class="card"><h3>YouTube Archive ↗</h3></div>
@@ -384,20 +383,20 @@
       'whatsapp-rules': `
         <a onclick="showPage('community')" class="back-btn">← Back to Community</a>
         <h1>WhatsApp Community Guidelines</h1>
-        <div class="card" style="cursor:default;"><h3>Group Guidelines</h3><p>Be respectful, refrain from spam, and encourage one another in faith.</p></div>
-        <a href="https://chat.whatsapp.com/CiwJ88eSR19BPLwrDpsYMN?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn btn-whatsapp" style="margin-top:12px;">Join WhatsApp Group</a>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>Group Guidelines</h3><p>Be respectful, refrain from spam, and encourage one another in faith.</p></div>
+        <a href="https://chat.whatsapp.com/CiwJ88eSR19BPLwrDpsYMN?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn btn-whatsapp" style="margin-top:16px;">Join WhatsApp Group</a>
       `,
       'discord-guide': `
         <a onclick="showPage('community')" class="back-btn">← Back to Community</a>
         <h1>Discord Server Guide</h1>
-        <div class="card" style="cursor:default;"><h3>Channel Navigation</h3><p>Assign language roles in #welcome to access specialized fellowship wings.</p></div>
-        <a href="https://discord.gg/AcsQ6DDqPB" target="_blank" class="btn btn-discord" style="margin-top:12px;">Join Discord Server</a>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>Channel Onboarding</h3><p>Select your native and learning language roles in #welcome to unlock specialized study wings and prayer channels.</p></div>
+        <a href="https://discord.gg/AcsQ6DDqPB" target="_blank" class="btn btn-discord" style="margin-top:16px;">Join Discord Server</a>
       `,
       'youtube-archive': `
         <a onclick="showPage('community')" class="back-btn">← Back to Community</a>
         <h1>YouTube Media Archive</h1>
-        <div class="card" style="cursor:default;"><h3>Recorded Devotions</h3><p>Watch scripture readings and language devotionals on our official channel.</p></div>
-        <a href="https://www.youtube.com/@ChristianMultilingual" target="_blank" class="btn btn-youtube" style="margin-top:12px;">Watch on YouTube</a>
+        <div class="card" style="cursor:default; margin-top:16px;"><h3>Recorded Devotions</h3><p>Watch scripture readings and language devotionals on our official channel.</p></div>
+        <a href="https://www.youtube.com/@ChristianMultilingual" target="_blank" class="btn btn-youtube" style="margin-top:16px;">Watch on YouTube</a>
       `
     };
 
@@ -472,7 +471,7 @@
         window.scrollTo(0, 0);
         
         if (pageKey === 'prayers') {
-          fetchLiveNews();
+          setTimeout(fetchLiveNews, 50);
         }
       }
     }
