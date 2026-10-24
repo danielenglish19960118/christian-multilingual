@@ -6,7 +6,7 @@
 
   <!-- Search Engine Verification Tags -->
   <meta name="google-site-verification" content="81Aicyu58UFfFMLW-RMThNT_kYLKN4a_8huPibh3yCM" />
-<meta name="yandex-verification" content="95222f99001d1e09" />
+  <meta name="yandex-verification" content="95222f99001d1e09" />
 
   <title>Christian Multilingual Faith Paradise | Portal</title>
   <style>
@@ -36,11 +36,11 @@
 
     .nav-links { display: flex; gap: 6px; list-style: none; flex-wrap: wrap; }
     .nav-item { position: relative; }
-    .nav-item > a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; padding: 6px 10px; border-radius: 6px; display: flex; align-items: center; gap: 4px; transition: all 0.2s; }
+    .nav-item > a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; padding: 6px 10px; border-radius: 6px; display: flex; align-items: center; gap: 4px; transition: all 0.2s; cursor: pointer; }
     .nav-item:hover > a, .nav-item > a.active { color: var(--accent); background: rgba(56, 189, 248, 0.1); }
 
     .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background-color: var(--card-bg); min-width: 220px; box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5); border: 1px solid var(--border); border-radius: 8px; z-index: 100; padding: 6px 0; margin-top: 4px; }
-    .dropdown-menu a { color: var(--text-muted); padding: 8px 16px; text-decoration: none; display: block; font-size: 0.85rem; }
+    .dropdown-menu a { color: var(--text-muted); padding: 8px 16px; text-decoration: none; display: block; font-size: 0.85rem; cursor: pointer; }
     .dropdown-menu a:hover { background-color: rgba(56, 189, 248, 0.15); color: var(--accent); }
     .nav-item:hover .dropdown-menu { display: block; }
 
@@ -52,7 +52,7 @@
     /* 通用區塊卡片 */
     .section-title { font-size: 1.25rem; color: var(--accent); margin-bottom: 16px; margin-top: 24px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 24px; }
-    .card { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); padding: 20px; border-radius: 12px; text-decoration: none; color: inherit; display: block; transition: all 0.2s; }
+    .card { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); padding: 20px; border-radius: 12px; text-decoration: none; color: inherit; display: block; transition: all 0.2s; cursor: pointer; }
     .card:hover { border-color: var(--accent); transform: translateY(-2px); }
     .card h3 { color: var(--accent); margin-bottom: 6px; font-size: 1.05rem; }
     .card p { color: var(--text-muted); font-size: 0.88rem; }
@@ -91,62 +91,62 @@
       </div>
       <ul class="nav-links">
         <li class="nav-item">
-          <a href="#home" onclick="showPage('home')">Home ▾</a>
+          <a onclick="showPage('home')">Home ▾</a>
           <div class="dropdown-menu">
-            <a href="#about-mission" onclick="showPage('about-mission')">Our Mission</a>
-            <a href="#statement-of-faith" onclick="showPage('statement-of-faith')">Statement of Faith</a>
+            <a onclick="showPage('about-mission')">Our Mission</a>
+            <a onclick="showPage('statement-of-faith')">Statement of Faith</a>
           </div>
         </li>
         <li class="nav-item">
-          <a href="#resources" onclick="showPage('resources')">Resources ▾</a>
+          <a onclick="showPage('resources')">Resources ▾</a>
           <div class="dropdown-menu">
-            <a href="#parallel-translations" onclick="showPage('parallel-translations')">Parallel Translations</a>
-            <a href="#audio-bibles" onclick="showPage('audio-bibles')">Audio Bibles</a>
-            <a href="#lexicons-tools" onclick="showPage('lexicons-tools')">Lexicons & Tools</a>
+            <a onclick="showPage('parallel-translations')">Parallel Translations</a>
+            <a onclick="showPage('audio-bibles')">Audio Bibles</a>
+            <a onclick="showPage('lexicons-tools')">Lexicons & Tools</a>
           </div>
         </li>
         <li class="nav-item">
-          <a href="#prayers" onclick="showPage('prayers')">World Prayers ▾</a>
+          <a onclick="showPage('prayers')">World Prayers ▾</a>
           <div class="dropdown-menu">
-            <a href="#crisis-relief" onclick="showPage('crisis-relief')">Crisis Relief Focus</a>
-            <a href="#intercession-log" onclick="showPage('intercession-log')">Intercession Archive</a>
+            <a onclick="showPage('crisis-relief')">Crisis Relief Focus</a>
+            <a onclick="showPage('intercession-log')">Intercession Archive</a>
           </div>
         </li>
         <li class="nav-item">
-          <a href="#languages" onclick="showPage('languages')">Languages ▾</a>
+          <a onclick="showPage('languages')">Languages ▾</a>
           <div class="dropdown-menu">
-            <a href="#lang-english" onclick="showPage('lang-english')">English Wing</a>
-            <a href="#lang-mandarin" onclick="showPage('lang-mandarin')">Mandarin Wing (中文)</a>
-            <a href="#lang-global" onclick="showPage('lang-global')">Global Wings</a>
+            <a onclick="showPage('lang-english')">English Wing</a>
+            <a onclick="showPage('lang-mandarin')">Mandarin Wing (中文)</a>
+            <a onclick="showPage('lang-global')">Global Wings</a>
           </div>
         </li>
         <li class="nav-item">
-          <a href="#etymology" onclick="showPage('etymology')">Etymology ▾</a>
+          <a onclick="showPage('etymology')">Etymology ▾</a>
           <div class="dropdown-menu">
-            <a href="#etymology-hebrew" onclick="showPage('etymology-hebrew')">Hebrew Lexical Roots</a>
-            <a href="#etymology-greek" onclick="showPage('etymology-greek')">Greek Manuscript Studies</a>
+            <a onclick="showPage('etymology-hebrew')">Hebrew Lexical Roots</a>
+            <a onclick="showPage('etymology-greek')">Greek Manuscript Studies</a>
           </div>
         </li>
         <li class="nav-item">
-          <a href="#mentors" onclick="showPage('mentors')">Mentors ▾</a>
+          <a onclick="showPage('mentors')">Mentors ▾</a>
           <div class="dropdown-menu">
-            <a href="#advisory-board" onclick="showPage('advisory-board')">Scholar Advisory Board</a>
-            <a href="#sponsor-portal" onclick="showPage('sponsor-portal')">Sponsor Partnership</a>
+            <a onclick="showPage('advisory-board')">Scholar Advisory Board</a>
+            <a onclick="showPage('sponsor-portal')">Sponsor Partnership</a>
           </div>
         </li>
         <li class="nav-item">
-          <a href="#schedule" onclick="showPage('schedule')">Schedule ▾</a>
+          <a onclick="showPage('schedule')">Schedule ▾</a>
           <div class="dropdown-menu">
-            <a href="#coworking-schedule" onclick="showPage('coworking-schedule')">Co-Working Hours</a>
-            <a href="#prayer-hours" onclick="showPage('prayer-hours')">Global Prayer Hours</a>
+            <a onclick="showPage('coworking-schedule')">Co-Working Hours</a>
+            <a onclick="showPage('prayer-hours')">Global Prayer Hours</a>
           </div>
         </li>
         <li class="nav-item">
-          <a href="#community" onclick="showPage('community')">Community ▾</a>
+          <a onclick="showPage('community')">Community ▾</a>
           <div class="dropdown-menu">
-            <a href="#whatsapp-rules" onclick="showPage('whatsapp-rules')">WhatsApp Group Rules</a>
-            <a href="#discord-guide" onclick="showPage('discord-guide')">Discord Server Guide</a>
-            <a href="#youtube-archive" onclick="showPage('youtube-archive')">YouTube Media Archive</a>
+            <a onclick="showPage('whatsapp-rules')">WhatsApp Group Rules</a>
+            <a onclick="showPage('discord-guide')">Discord Server Guide</a>
+            <a onclick="showPage('youtube-archive')">YouTube Media Archive</a>
           </div>
         </li>
       </ul>
@@ -160,7 +160,7 @@
     </div>
   </div>
 
-  <!-- 動態子頁面數據與路由邏輯 -->
+  <!-- 完整的單頁路由與即時新聞抓取邏輯 -->
   <script>
     const pages = {
       'home': `
@@ -170,18 +170,18 @@
         </div>
         <h2 class="section-title">Featured Portal Hubs</h2>
         <div class="grid">
-          <a onclick="showPage('prayers')" class="card">
+          <div onclick="showPage('prayers')" class="card">
             <h3>World Prayers & Intercession ↗</h3>
             <p>Real-time global news feeds converted into scripture-grounded prayer points.</p>
-          </a>
-          <a onclick="showPage('resources')" class="card">
+          </div>
+          <div onclick="showPage('resources')" class="card">
             <h3>English Bible Resources ↗</h3>
             <p>Parallel translations, lexicons, and audio study tools via BibleGateway.</p>
-          </a>
-          <a onclick="showPage('community')" class="card">
+          </div>
+          <div onclick="showPage('community')" class="card">
             <h3>Community & Social Hub ↗</h3>
             <p>Join our active WhatsApp group, Discord server, or YouTube channel.</p>
-          </a>
+          </div>
         </div>
         <h2 class="section-title">Partnership & Mentor Inquiry</h2>
         <form action="https://formspree.io/f/myeezkkw" method="POST" class="sponsor-form">
@@ -216,7 +216,7 @@
       'about-mission': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Our Mission & Vision</h1>
-        <div class="card">
+        <div class="card" style="cursor:default;">
           <h3>Cross-Cultural Faith & Language Ministry</h3>
           <p>Equipping believers and language learners worldwide with scripture resources, etymological insights, and global prayer fellowship.</p>
         </div>
@@ -224,7 +224,7 @@
       'statement-of-faith': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Statement of Faith</h1>
-        <div class="card">
+        <div class="card" style="cursor:default;">
           <h3>Core Theological Foundations</h3>
           <p>We confess historical Christian orthodox faith, the authority of divine Scripture, and the unity of believers across all nations.</p>
         </div>
@@ -233,98 +233,116 @@
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Online English Bible Resources</h1>
         <div class="grid">
-          <a onclick="showPage('parallel-translations')" class="card"><h3>Parallel Translations ↗</h3><p>Compare NIV, ESV, KJV, and CUV side-by-side.</p></a>
-          <a onclick="showPage('audio-bibles')" class="card"><h3>Audio Bibles & Podcasts ↗</h3><p>Listen to narrated scriptures and devotions.</p></a>
-          <a onclick="showPage('lexicons-tools')" class="card"><h3>Lexicons & Study Tools ↗</h3><p>Strong's concordance and Greek/Hebrew lexicons.</p></a>
+          <div onclick="showPage('parallel-translations')" class="card"><h3>Parallel Translations ↗</h3><p>Compare NIV, ESV, KJV, and CUV side-by-side.</p></div>
+          <div onclick="showPage('audio-bibles')" class="card"><h3>Audio Bibles & Podcasts ↗</h3><p>Listen to narrated scriptures and devotions.</p></div>
+          <div onclick="showPage('lexicons-tools')" class="card"><h3>Lexicons & Study Tools ↗</h3><p>Strong's concordance and Greek/Hebrew lexicons.</p></div>
         </div>
       `,
       'parallel-translations': `
         <a onclick="showPage('resources')" class="back-btn">← Back to Resources</a>
         <h1>Parallel English & Multilingual Translations</h1>
-        <div class="card"><h3>ESV & CUV Formal Equivalence</h3><p>Word-for-word cross-referencing between modern English and traditional Chinese Bible manuscripts.</p></div>
+        <div class="card" style="cursor:default;"><h3>ESV & CUV Formal Equivalence</h3><p>Word-for-word cross-referencing between modern English and traditional Chinese Bible manuscripts.</p></div>
       `,
       'audio-bibles': `
         <a onclick="showPage('resources')" class="back-btn">← Back to Resources</a>
         <h1>Audio Bibles & Narrated Scripture</h1>
-        <div class="card"><h3>Immersive Audio Devotions</h3><p>High-quality audio Bibles via YouVersion and international audio providers.</p></div>
+        <div class="card" style="cursor:default;"><h3>Immersive Audio Devotions</h3><p>High-quality audio Bibles via YouVersion and international audio providers.</p></div>
       `,
       'lexicons-tools': `
         <a onclick="showPage('resources')" class="back-btn">← Back to Resources</a>
         <h1>Original Language Lexicons</h1>
-        <div class="card"><h3>Blue Letter Bible Interlinear</h3><p>Greek and Hebrew root word parsing, lexicons, and concordance search tools.</p></div>
+        <div class="card" style="cursor:default;"><h3>Blue Letter Bible Interlinear</h3><p>Greek and Hebrew root word parsing, lexicons, and concordance search tools.</p></div>
       `,
       'prayers': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>World Prayers & Intercession</h1>
-        <div class="grid">
-          <a onclick="showPage('crisis-relief')" class="card"><h3>Crisis Relief Focus ↗</h3><p>Active prayer points for global emergencies.</p></a>
-          <a onclick="showPage('intercession-log')" class="card"><h3>Intercession Archive ↗</h3><p>Past prayer logs and international focus points.</p></a>
+        <p style="color:var(--text-muted); margin-bottom:20px;">Turning real-time international news into scripture-grounded intercession for nations and crisis zones.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <h2 style="color:var(--accent); font-size:1.2rem;">Live World News Feed</h2>
+              <button onclick="fetchLiveNews()" style="background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">↻ Refresh</button>
+            </div>
+            <div id="feed-status" style="color:var(--text-muted); font-style:italic; margin-bottom: 12px; font-size: 0.9rem;">Fetching real-time updates...</div>
+            <div id="news-feed"></div>
+          </div>
+          <div>
+            <h2 style="color:var(--accent); font-size:1.2rem; margin-bottom:16px;">Structured Intercession Focus</h2>
+            <div class="card" style="margin-bottom: 16px; cursor:default;">
+              <h3>Eastern Europe & Eurasia</h3>
+              <p>Praying for civilian protection, food supply routes, and lasting peace.</p>
+            </div>
+            <div class="card" style="margin-bottom: 16px; cursor:default;">
+              <h3>Middle East & Regional Aid</h3>
+              <p>Interceding for unhindered humanitarian access and civilian safety.</p>
+            </div>
+          </div>
         </div>
       `,
       'crisis-relief': `
         <a onclick="showPage('prayers')" class="back-btn">← Back to World Prayers</a>
         <h1>Crisis Relief Intercession</h1>
-        <div class="card"><h3>Humanitarian & Peace Prayer Points</h3><p>Lifting up displaced families, healthcare workers, and peacekeeping initiatives worldwide.</p></div>
+        <div class="card" style="cursor:default;"><h3>Humanitarian & Peace Prayer Points</h3><p>Lifting up displaced families, healthcare workers, and peacekeeping initiatives worldwide.</p></div>
       `,
       'intercession-log': `
         <a onclick="showPage('prayers')" class="back-btn">← Back to World Prayers</a>
         <h1>Intercession Archive Log</h1>
-        <div class="card"><h3>Weekly Prayer Summaries</h3><p>Documented global prayer focuses across Eastern Europe, Middle East, and Africa.</p></div>
+        <div class="card" style="cursor:default;"><h3>Weekly Prayer Summaries</h3><p>Documented global prayer focuses across Eastern Europe, Middle East, and Africa.</p></div>
       `,
       'languages': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Language Fellowship Wings</h1>
         <div class="grid">
-          <a onclick="showPage('lang-english')" class="card"><h3>English Wing ↗</h3></a>
-          <a onclick="showPage('lang-mandarin')" class="card"><h3>Mandarin Wing (中文) ↗</h3></a>
-          <a onclick="showPage('lang-global')" class="card"><h3>Global Wings ↗</h3></a>
+          <div onclick="showPage('lang-english')" class="card"><h3>English Wing ↗</h3></div>
+          <div onclick="showPage('lang-mandarin')" class="card"><h3>Mandarin Wing (中文) ↗</h3></div>
+          <div onclick="showPage('lang-global')" class="card"><h3>Global Wings ↗</h3></div>
         </div>
       `,
       'lang-english': `
         <a onclick="showPage('languages')" class="back-btn">← Back to Languages</a>
         <h1>English Language Fellowship Wing</h1>
-        <div class="card"><h3>English Writing & Devotions</h3><p>Practice writing and reading in English alongside global Christian peers.</p></div>
+        <div class="card" style="cursor:default;"><h3>English Writing & Devotions</h3><p>Practice writing and reading in English alongside global Christian peers.</p></div>
       `,
       'lang-mandarin': `
         <a onclick="showPage('languages')" class="back-btn">← Back to Languages</a>
         <h1>Mandarin Wing (華語專區)</h1>
-        <div class="card"><h3>雙語經文研讀</h3><p>和合本與英文雙語對照研讀及分享小組。</p></div>
+        <div class="card" style="cursor:default;"><h3>雙語經文研讀</h3><p>和合本與英文雙語對照研讀及分享小組。</p></div>
       `,
       'lang-global': `
         <a onclick="showPage('languages')" class="back-btn">← Back to Languages</a>
         <h1>Global Language Wings</h1>
-        <div class="card"><h3>Japanese, Korean, Spanish & German</h3><p>Dedicated multi-lingual channels for language study and fellowship.</p></div>
+        <div class="card" style="cursor:default;"><h3>Japanese, Korean, Spanish & German</h3><p>Dedicated multi-lingual channels for language study and fellowship.</p></div>
       `,
       'etymology': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Scriptural Etymology</h1>
         <div class="grid">
-          <a onclick="showPage('etymology-hebrew')" class="card"><h3>Hebrew Roots ↗</h3></a>
-          <a onclick="showPage('etymology-greek')" class="card"><h3>Greek Manuscripts ↗</h3></a>
+          <div onclick="showPage('etymology-hebrew')" class="card"><h3>Hebrew Roots ↗</h3></div>
+          <div onclick="showPage('etymology-greek')" class="card"><h3>Greek Manuscripts ↗</h3></div>
         </div>
       `,
       'etymology-hebrew': `
         <a onclick="showPage('etymology')" class="back-btn">← Back to Etymology</a>
         <h1>Hebrew Root Studies (Old Testament)</h1>
-        <div class="card"><h3>Hesed & Shalom Analysis</h3><p>Exploring the historical roots of divine covenantal faithfulness and wholeness.</p></div>
+        <div class="card" style="cursor:default;"><h3>Hesed & Shalom Analysis</h3><p>Exploring the historical roots of divine covenantal faithfulness and wholeness.</p></div>
       `,
       'etymology-greek': `
         <a onclick="showPage('etymology')" class="back-btn">← Back to Etymology</a>
         <h1>Greek Manuscript Studies (New Testament)</h1>
-        <div class="card"><h3>Agape & Logos Parsing</h3><p>Examining Koine Greek manuscript roots and theological precision.</p></div>
+        <div class="card" style="cursor:default;"><h3>Agape & Logos Parsing</h3><p>Examining Koine Greek manuscript roots and theological precision.</p></div>
       `,
       'mentors': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Mentors & Partner Organizations</h1>
         <div class="grid">
-          <a onclick="showPage('advisory-board')" class="card"><h3>Scholar Advisory Board ↗</h3></a>
-          <a onclick="showPage('sponsor-portal')" class="card"><h3>Sponsor Partnership ↗</h3></a>
+          <div onclick="showPage('advisory-board')" class="card"><h3>Scholar Advisory Board ↗</h3></div>
+          <div onclick="showPage('sponsor-portal')" class="card"><h3>Sponsor Partnership ↗</h3></div>
         </div>
       `,
       'advisory-board': `
         <a onclick="showPage('mentors')" class="back-btn">← Back to Mentors</a>
         <h1>Scholar Advisory Board</h1>
-        <div class="card"><h3>Honored Scholars & Predecessors</h3><p>Honoring senior educators and theologians who guide our community's scope.</p></div>
+        <div class="card" style="cursor:default;"><h3>Honored Scholars & Predecessors</h3><p>Honoring senior educators and theologians who guide our community's scope.</p></div>
       `,
       'sponsor-portal': `
         <a onclick="showPage('mentors')" class="back-btn">← Back to Mentors</a>
@@ -340,58 +358,125 @@
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Gathering Schedule & Hours</h1>
         <div class="grid">
-          <a onclick="showPage('coworking-schedule')" class="card"><h3>Co-Working Hours ↗</h3></a>
-          <a onclick="showPage('prayer-hours')" class="card"><h3>Global Prayer Hours ↗</h3></a>
+          <div onclick="showPage('coworking-schedule')" class="card"><h3>Co-Working Hours ↗</h3></div>
+          <div onclick="showPage('prayer-hours')" class="card"><h3>Global Prayer Hours ↗</h3></div>
         </div>
       `,
       'coworking-schedule': `
         <a onclick="showPage('schedule')" class="back-btn">← Back to Schedule</a>
         <h1>Silent Co-Working Hours</h1>
-        <div class="card"><h3>24/7 Study Lounges</h3><p>Focus study rooms for scripture reflection and translation work.</p></div>
+        <div class="card" style="cursor:default;"><h3>24/7 Study Lounges</h3><p>Focus study rooms for scripture reflection and translation work.</p></div>
       `,
       'prayer-hours': `
         <a onclick="showPage('schedule')" class="back-btn">← Back to Schedule</a>
         <h1>Global Prayer Hours</h1>
-        <div class="card"><h3>Weekly Prayer Calls</h3><p>Gatherings on Discord for joint intercession and prayer requests.</p></div>
+        <div class="card" style="cursor:default;"><h3>Weekly Prayer Calls</h3><p>Gatherings on Discord for joint intercession and prayer requests.</p></div>
       `,
       'community': `
         <a onclick="showPage('home')" class="back-btn">← Back to Portal</a>
         <h1>Community Platforms</h1>
         <div class="grid">
-          <a onclick="showPage('whatsapp-rules')" class="card"><h3>WhatsApp Rules ↗</h3></a>
-          <a onclick="showPage('discord-guide')" class="card"><h3>Discord Guide ↗</h3></a>
-          <a onclick="showPage('youtube-archive')" class="card"><h3>YouTube Archive ↗</h3></a>
+          <div onclick="showPage('whatsapp-rules')" class="card"><h3>WhatsApp Rules ↗</h3></div>
+          <div onclick="showPage('discord-guide')" class="card"><h3>Discord Guide ↗</h3></div>
+          <div onclick="showPage('youtube-archive')" class="card"><h3>YouTube Archive ↗</h3></div>
         </div>
       `,
       'whatsapp-rules': `
         <a onclick="showPage('community')" class="back-btn">← Back to Community</a>
         <h1>WhatsApp Community Guidelines</h1>
-        <div class="card"><h3>Group Guidelines</h3><p>Be respectful, refrain from spam, and encourage one another in faith.</p></div>
+        <div class="card" style="cursor:default;"><h3>Group Guidelines</h3><p>Be respectful, refrain from spam, and encourage one another in faith.</p></div>
         <a href="https://chat.whatsapp.com/CiwJ88eSR19BPLwrDpsYMN?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn btn-whatsapp" style="margin-top:12px;">Join WhatsApp Group</a>
       `,
       'discord-guide': `
         <a onclick="showPage('community')" class="back-btn">← Back to Community</a>
         <h1>Discord Server Guide</h1>
-        <div class="card"><h3>Channel Navigation</h3><p>Assign language roles in #welcome to access specialized fellowship wings.</p></div>
+        <div class="card" style="cursor:default;"><h3>Channel Navigation</h3><p>Assign language roles in #welcome to access specialized fellowship wings.</p></div>
         <a href="https://discord.gg/AcsQ6DDqPB" target="_blank" class="btn btn-discord" style="margin-top:12px;">Join Discord Server</a>
       `,
       'youtube-archive': `
         <a onclick="showPage('community')" class="back-btn">← Back to Community</a>
         <h1>YouTube Media Archive</h1>
-        <div class="card"><h3>Recorded Devotions</h3><p>Watch scripture readings and language devotionals on our official channel.</p></div>
+        <div class="card" style="cursor:default;"><h3>Recorded Devotions</h3><p>Watch scripture readings and language devotionals on our official channel.</p></div>
         <a href="https://www.youtube.com/@ChristianMultilingual" target="_blank" class="btn btn-youtube" style="margin-top:12px;">Watch on YouTube</a>
       `
     };
+
+    const fallbackNews = [
+      { title: "UN Humanitarian Agencies Expand Aid Distribution in Global Crisis Zones", link: "https://news.un.org/en/", date: "Today" },
+      { title: "Global Food Security Initiatives Launch Emergency Response Program", link: "https://news.un.org/en/", date: "Today" },
+      { title: "International Peace Summit Urges Immediate Ceasefire for Civilian Safety", link: "https://news.un.org/en/", date: "Yesterday" }
+    ];
+
+    async function fetchLiveNews() {
+      const feedContainer = document.getElementById('news-feed');
+      const feedStatus = document.getElementById('feed-status');
+      if (!feedContainer) return;
+      
+      feedStatus.innerText = "Fetching real-time news...";
+      feedContainer.innerHTML = "";
+
+      const targetRss = 'https://news.un.org/feed/subscribe/en/news/all/rss.xml';
+
+      try {
+        const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(targetRss)}`);
+        if (!response.ok) throw new Error('Proxy failed');
+        
+        const data = await response.json();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(data.contents, "text/xml");
+        const items = xmlDoc.querySelectorAll("item");
+
+        if (items.length > 0) {
+          feedStatus.style.display = 'none';
+          let count = 0;
+          items.forEach(item => {
+            if (count >= 5) return;
+            const title = item.querySelector("title") ? item.querySelector("title").textContent : "Global News Update";
+            const link = item.querySelector("link") ? item.querySelector("link").textContent : "https://news.un.org";
+            const pubDate = item.querySelector("pubDate") ? new Date(item.querySelector("pubDate").textContent).toLocaleDateString() : "Recent";
+
+            renderCard(title, link, pubDate);
+            count++;
+          });
+          return;
+        }
+        throw new Error("No items parsed");
+
+      } catch (err) {
+        feedStatus.innerText = "Showing current global updates:";
+        fallbackNews.forEach(item => renderCard(item.title, item.link, item.date));
+      }
+    }
+
+    function renderCard(title, link, date) {
+      const feedContainer = document.getElementById('news-feed');
+      if (!feedContainer) return;
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.style.marginBottom = '12px';
+      card.style.cursor = 'pointer';
+      card.innerHTML = `
+        <a href="${link}" target="_blank" style="color:var(--text-main); text-decoration:none; font-weight:600; font-size:0.95rem; display:block; margin-bottom:6px;">${title} ↗</a>
+        <div style="font-size:0.8rem; color:var(--text-muted); display:flex; justify-content:space-between;">
+          <span>Source: UN World News</span>
+          <span>${date}</span>
+        </div>
+      `;
+      feedContainer.appendChild(card);
+    }
 
     function showPage(pageKey) {
       const contentDiv = document.getElementById('page-content');
       if (pages[pageKey]) {
         contentDiv.innerHTML = pages[pageKey];
         window.scrollTo(0, 0);
+        
+        if (pageKey === 'prayers') {
+          fetchLiveNews();
+        }
       }
     }
 
-    // Initialize home page on initial load
     document.addEventListener('DOMContentLoaded', () => showPage('home'));
   </script>
 
