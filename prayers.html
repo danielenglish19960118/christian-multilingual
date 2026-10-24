@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Affairs & Real-Time Prayers | Christian Multilingual</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --gold: #fbbf24;
+      --border: #334155;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; min-height: 100vh; padding: 20px; display: flex; justify-content: center; }
+    .container { max-width: 960px; width: 100%; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+
+    /* Navigation Header */
+    nav { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; }
+    .logo { font-size: 1.3rem; font-weight: 700; color: var(--accent); text-decoration: none; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .logo svg { width: 24px; height: 24px; fill: var(--accent); }
+    .nav-links { display: flex; gap: 10px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); background: rgba(56, 189, 248, 0.1); }
+
+    /* Hero Banner */
+    .hero-box { background: linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(30, 41, 59, 0.8) 100%); border: 1px solid var(--border); border-radius: 12px; padding: 28px; text-align: center; margin-bottom: 32px; }
+    .hero-box h1 { font-size: 1.8rem; color: var(--text-main); margin-bottom: 8px; }
+    .hero-box p { color: var(--text-muted); max-width: 700px; margin: 0 auto 16px; font-size: 1rem; }
+    .scripture-banner { background: rgba(251, 191, 36, 0.08); border-left: 4px solid var(--gold); padding: 12px 16px; border-radius: 6px; font-style: italic; color: var(--gold); font-size: 0.95rem; text-align: left; }
+
+    /* Main Grid */
+    .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+    @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } }
+
+    .section-title { font-size: 1.25rem; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .section-title svg { width: 22px; height: 22px; fill: var(--accent); }
+
+    /* RSS News Cards */
+    .feed-container { display: flex; flex-direction: column; gap: 14px; }
+    .news-card { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); border-radius: 10px; padding: 16px; transition: border-color 0.2s; }
+    .news-card:hover { border-color: var(--accent); }
+    .news-title { font-size: 0.98rem; font-weight: 600; color: var(--text-main); text-decoration: none; display: block; margin-bottom: 6px; }
+    .news-title:hover { color: var(--accent); }
+    .news-meta { font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; }
+
+    /* Guided Prayer Cards */
+    .prayer-card { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 18px; margin-bottom: 16px; }
+    .prayer-card h3 { font-size: 1.05rem; color: var(--accent); margin-bottom: 6px; }
+    .prayer-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; }
+    .prayer-points { list-style: none; padding-left: 0; font-size: 0.88rem; color: var(--text-main); }
+    .prayer-points li { margin-bottom: 6px; position: relative; padding-left: 18px; }
+    .prayer-points li::before { content: "•"; color: var(--accent); position: absolute; left: 0; font-weight: bold; }
+
+    /* Loading Spinner & Status */
+    #feed-status { color: var(--text-muted); font-size: 0.9rem; font-style: italic; text-align: center; padding: 20px 0; }
+    .refresh-btn { background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+    .refresh-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .footer { border-top: 1px solid var(--border); margin-top: 32px; padding-top: 20px; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Navigation Bar -->
+    <nav>
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/></svg>
+        Faith Paradise
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resources.html">Bible Resources</a></li>
+        <li><a href="prayers.html" class="active">World Prayers</a></li>
+        <li><a href="languages.html">Languages</a></li>
+        <li><a href="etymology.html">Etymology</a></li>
+        <li><a href="mentors.html">Mentors & Sponsors</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Header -->
+    <div class="hero-box">
+      <h1>Global Affairs & Real-Time Intercession</h1>
+      <p>Fetching international current events in real time to empower localized, scripture-grounded intercession for nations, humanitarian emergencies, and global peace.</p>
+      
+      <div class="scripture-banner">
+        "I urge, then, first of all, that petitions, prayers, intercession and thanksgiving be made for all people—for kings and all those in authority, that we may live peaceful and quiet lives in all godliness and holiness." — 1 Timothy 2:1-2
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content-grid">
+      
+      <!-- Left Column: Live News Feed -->
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h2 class="section-title" style="margin-bottom:0;">
+            <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1a2 2 0 0 0 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41a7.98 7.98 0 0 1 4.9 10.81z"/></svg>
+            World News Feed
+          </h2>
+          <button class="refresh-btn" onclick="fetchLiveNews()">↻ Refresh</button>
+        </div>
+
+        <div id="feed-status">Fetching real-time global news feed...</div>
+        <div class="feed-container" id="news-feed"></div>
+      </div>
+
+      <!-- Right Column: Intercession Focus & Guidelines -->
+      <div>
+        <h2 class="section-title">
+          <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          Intercession Focus
+        </h2>
+
+        <div class="prayer-card">
+          <h3>Eastern Europe & Eurasia</h3>
+          <p>Praying for civilian protection, infrastructure preservation, and diplomatic pathways to peace.</p>
+          <ul class="prayer-points">
+            <li>Comfort for displaced families and refugees.</li>
+            <li>Wisdom for international negotiators and governing leaders.</li>
+            <li>Protection for medical workers and aid personnel.</li>
+          </ul>
+        </div>
+
+        <div class="prayer-card">
+          <h3>Middle East & North Africa</h3>
+          <p>Interceding for regional stabilization, humanitarian access, and protection of innocent lives.</p>
+          <ul class="prayer-points">
+            <li>Unhindered delivery of food, clean water, and medical supplies.</li>
+            <li>Healing and restoration across vulnerable and isolated communities.</li>
+            <li>Strength for local churches and relief organizations.</li>
+          </ul>
+        </div>
+
+        <div class="prayer-card">
+          <h3>Horn of Africa & Central Africa</h3>
+          <p>Lifting up regions navigating severe drought, health containment, and displaced populations.</p>
+          <ul class="prayer-points">
+            <li>Effective response to disease containment and healthcare access.</li>
+            <li>Sustainable agricultural recovery and food distribution.</li>
+            <li>Protection and peace for rural communities.</li>
+          </ul>
+        </div>
+
+        <div class="prayer-card">
+          <h3>Global Climate Disasters & Recovery</h3>
+          <p>Standing in prayer for coastal regions and vulnerable communities affected by floods and severe weather.</p>
+          <ul class="prayer-points">
+            <li>Rapid emergency response and rebuilding assistance.</li>
+            <li>Long-term stewardship and economic resilience for affected families.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2026 Christian Multilingual Faith Paradise | Real-Time Prayer Intercession Portal</p>
+    </div>
+  </div>
+
+  <!-- Real-Time RSS Fetching Script -->
+  <script>
+    async function fetchLiveNews() {
+      const feedContainer = document.getElementById('news-feed');
+      const feedStatus = document.getElementById('feed-status');
+      
+      feedStatus.innerText = "Fetching real-time global news feed...";
+      feedContainer.innerHTML = "";
+
+      // Public UN News RSS Feed translated to JSON via rss2json API
+      const rssUrl = encodeURIComponent('https://news.un.org/feed/subscribe/en/news/all/rss.xml');
+      const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`;
+
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (data.status === 'ok' && data.items.length > 0) {
+          feedStatus.style.display = 'none';
+          
+          // Render the top 6 news headlines
+          data.items.slice(0, 6).forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'news-card';
+            
+            const dateStr = new Date(item.pubDate).toLocaleDateString(undefined, {
+              month: 'short', day: 'numeric', year: 'numeric'
+            });
+
+            card.innerHTML = `
+              <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="news-title">
+                ${item.title} ↗
+              </a>
+              <div class="news-meta">
+                <span>Source: UN World News</span>
+                <span>${dateStr}</span>
+              </div>
+            `;
+            feedContainer.appendChild(card);
+          });
+        } else {
+          feedStatus.innerText = "Unable to load live news. Please try clicking refresh.";
+        }
+      } catch (error) {
+        console.error("Error fetching RSS news feed:", error);
+        feedStatus.innerText = "Error loading real-time news feed. Please check your internet connection.";
+      }
+    }
+
+    // Trigger news fetch on page load
+    document.addEventListener('DOMContentLoaded', fetchLiveNews);
+  </script>
+
+</body>
+</html>
