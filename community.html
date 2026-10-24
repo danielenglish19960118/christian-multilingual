@@ -5,29 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Community | Christian Multilingual</title>
   <style>
-    :root { --bg-color: #0f172a; --card-bg: #1e293b; --text-main: #f8fafc; --text-muted: #94a3b8; --accent: #38bdf8; --discord-purple: #5865F2; --youtube-red: #FF0000; --border: #334155; }
+    :root { 
+      --bg-color: #0f172a; 
+      --card-bg: #1e293b; 
+      --text-main: #f8fafc; 
+      --text-muted: #94a3b8; 
+      --accent: #38bdf8; 
+      --discord-purple: #5865F2; 
+      --youtube-red: #FF0000; 
+      --whatsapp-green: #25D366;
+      --whatsapp-hover: #1EBE5D;
+      --border: #334155; 
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
     body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; min-height: 100vh; padding: 20px; display: flex; justify-content: center; }
-    .container { max-width: 960px; width: 100%; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    .container { max-width: 960px; width: 100%; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+    
+    /* 導覽列 */
     nav { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; }
     .logo { font-size: 1.3rem; font-weight: 700; color: var(--accent); text-decoration: none; margin-bottom: 16px; display: block; }
-    .nav-links { display: flex; gap: 12px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 6px 12px; border-radius: 6px; }
-    .nav-links a.active { color: var(--accent); background: rgba(56, 189, 248, 0.1); }
+    .nav-links { display: flex; gap: 10px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); background: rgba(56, 189, 248, 0.1); }
+    
+    /* 社群按鈕區塊 */
     .btn-group { display: flex; flex-direction: column; gap: 16px; align-items: center; margin-top: 32px; }
-    .btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 360px; padding: 14px 24px; border-radius: 10px; text-decoration: none; font-weight: 700; color: #fff; }
+    .btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 380px; padding: 14px 24px; border-radius: 10px; text-decoration: none; font-weight: 700; color: #fff; transition: transform 0.2s, opacity 0.2s; }
+    .btn:hover { transform: translateY(-2px); opacity: 0.95; }
+    .btn svg { width: 22px; height: 22px; fill: currentColor; }
+    
+    .btn-whatsapp { background-color: var(--whatsapp-green); }
     .btn-youtube { background-color: var(--youtube-red); }
     .btn-discord { background-color: var(--discord-purple); }
     .btn-outline { background-color: transparent; border: 1px solid var(--border); color: var(--text-muted); }
+    .btn-outline:hover { color: var(--text-main); border-color: var(--text-muted); }
+
+    .badge-box { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 28px; text-align: center; margin-bottom: 24px; }
+    .badge-box h2 { font-size: 1.5rem; color: var(--text-main); margin-bottom: 8px; }
+    .badge-box p { color: var(--text-muted); max-width: 520px; margin: 0 auto; }
   </style>
 </head>
 <body>
+
   <div class="container">
     <nav>
       <a href="index.html" class="logo">Faith Paradise</a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="resources.html">Bible Resources</a></li>
+        <li><a href="prayers.html">World Prayers</a></li>
         <li><a href="languages.html">Languages</a></li>
         <li><a href="etymology.html">Etymology</a></li>
         <li><a href="mentors.html">Mentors & Sponsors</a></li>
@@ -36,19 +62,37 @@
         <li><a href="community.html" class="active">Community</a></li>
       </ul>
     </nav>
-    <h1 style="text-align: center;">Join Our Community</h1>
-    <p style="color: var(--text-muted); text-align: center; margin-top: 8px;">Connect on Discord or subscribe to our YouTube channel for updates.</p>
+
+    <div class="badge-box">
+      <h2>Connect & Engage Anywhere</h2>
+      <p>Join our active messaging group on WhatsApp, fellowship with global members on Discord, or watch devotional teaching on YouTube.</p>
+    </div>
+
     <div class="btn-group">
-      <a href="https://www.youtube.com/@ChristianMultilingual" target="_blank" class="btn btn-youtube">
-        Watch on YouTube
+      <!-- WhatsApp 社群邀請按鈕 -->
+      <a href="https://chat.whatsapp.com/CiwJ88eSR19BPLwrDpsYMN?s=cl&p=a&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+        <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.508 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 4.992l-1.417 5.176 5.297-1.389c1.455.795 3.097 1.215 4.773 1.216h.004c5.509 0 9.99-4.479 9.99-9.986 0-2.668-1.038-5.176-2.925-7.062a9.922 9.922 0 0 0-7.064-2.932zm0 18.163h-.003c-1.5 0-2.97-.403-4.252-1.163l-.305-.181-3.16.828.843-3.08-.198-.315a8.14 8.14 0 0 1-1.251-4.269c0-4.502 3.664-8.165 8.168-8.165 2.181 0 4.232.85 5.773 2.392a8.125 8.125 0 0 1 2.389 5.772c0 4.503-3.664 8.166-8.164 8.166zm4.478-6.113c-.246-.123-1.457-.719-1.683-.801-.225-.082-.39-.123-.554.123-.164.246-.636.801-.78 0.965-.143.164-.287.185-.533.061-.246-.123-1.038-.383-1.978-1.221-.732-.653-1.227-1.46-1.371-1.706-.144-.246-.015-.379.108-.502.111-.11.246-.287.369-.431.123-.143.164-.246.246-.41.082-.164.041-.308-.021-.431-.061-.123-.554-1.334-.759-1.827-.2-.48-.403-.414-.554-.422h-.472c-.164 0-.431.061-.656.308-.225.246-.861.841-.861 2.051 0 1.21.881 2.378 1.004 2.543.123.164 1.733 2.646 4.2 3.712.587.254 1.045.405 1.402.519.59.188 1.127.161 1.551.098.473-.07 1.457-.596 1.663-1.171.205-.574.205-1.066.143-1.171-.061-.103-.225-.164-.471-.287z"/></svg>
+        Join WhatsApp Community
       </a>
-      <a href="https://discord.gg/AcsQ6DDqPB" target="_blank" class="btn btn-discord">
+
+      <!-- Discord 伺服器邀請按鈕 -->
+      <a href="https://discord.gg/AcsQ6DDqPB" target="_blank" rel="noopener noreferrer" class="btn btn-discord">
+        <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
         Join Discord Server
       </a>
-      <a href="https://discord.com/register" target="_blank" class="btn btn-outline">
-        Register on Discord
+
+      <!-- YouTube 頻道按鈕 -->
+      <a href="https://www.youtube.com/@ChristianMultilingual" target="_blank" rel="noopener noreferrer" class="btn btn-youtube">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        Watch on YouTube
+      </a>
+
+      <!-- Discord 註冊引導 -->
+      <a href="https://discord.com/register" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+        Don't have Discord? Register Here
       </a>
     </div>
   </div>
+
 </body>
 </html>
