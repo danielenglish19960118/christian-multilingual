@@ -3,12 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Search Engine Verification Tags -->
   <meta name="google-site-verification" content="你的Google驗證碼" />
   <meta name="yandex-verification" content="2f5cb4074998cab0" />
-
-  <title>Christian Multilingual Faith Paradise</title>
+  <title>Christian Multilingual Faith Paradise | Home</title>
   <style>
     :root {
       --bg-color: #0f172a;
@@ -18,423 +15,87 @@
       --accent: #38bdf8;
       --accent-hover: #0284c7;
       --discord-purple: #5865F2;
-      --discord-hover: #4752C4;
       --youtube-red: #FF0000;
-      --youtube-hover: #CC0000;
       --border: #334155;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; min-height: 100vh; padding: 20px; display: flex; justify-content: center; }
+    .container { max-width: 900px; width: 100%; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+    
+    /* 導覽列列與 Header */
+    nav { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; gap: 12px; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-links { display: flex; gap: 16px; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
 
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
+    /* Hero 視覺橫幅區 */
+    .hero { background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(30, 41, 59, 0.8) 100%); border: 1px solid var(--border); border-radius: 12px; padding: 36px; text-align: center; margin-bottom: 32px; }
+    .hero svg { width: 64px; height: 64px; fill: var(--accent); margin-bottom: 16px; }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 12px; }
+    .hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 650px; margin: 0 auto 20px; }
 
-    .container {
-      max-width: 800px;
-      width: 100%;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
+    /* 網格區塊 */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 32px; }
+    .card { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); padding: 24px; border-radius: 12px; transition: transform 0.2s, border-color 0.2s; }
+    .card:hover { transform: translateY(-4px); border-color: var(--accent); }
+    .card-icon { width: 40px; height: 40px; background: rgba(56, 189, 248, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .card-icon svg { width: 24px; height: 24px; fill: var(--accent); }
+    .card h3 { font-size: 1.15rem; color: var(--text-main); margin-bottom: 8px; }
+    .card p { color: var(--text-muted); font-size: 0.9rem; }
 
-    header {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 24px;
-      margin-bottom: 24px;
-      text-align: center;
-    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag { background: #0f172a; border: 1px solid var(--border); color: var(--text-muted); padding: 4px 12px; border-radius: 16px; font-size: 0.85rem; }
 
-    h1 {
-      font-size: 2rem;
-      color: var(--text-main);
-      margin-bottom: 8px;
-    }
-
-    .tagline {
-      color: var(--accent);
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-
-    .section {
-      margin-bottom: 28px;
-    }
-
-    h2 {
-      font-size: 1.25rem;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    p {
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    li {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      padding: 12px 16px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      color: var(--text-main);
-    }
-
-    li strong {
-      color: var(--accent);
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .tag {
-      background: #0f172a;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 4px 12px;
-      border-radius: 16px;
-      font-size: 0.85rem;
-    }
-
-    /* 聖經資源網格樣式 */
-    .bible-resources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .resource-card {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid var(--border);
-      padding: 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      color: var(--text-main);
-      transition: all 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .resource-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .resource-title {
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 6px;
-    }
-
-    .resource-desc {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
-    /* 前輩與導師致意專區 */
-    .mentor-box {
-      background: rgba(56, 189, 248, 0.05);
-      border: 1px dashed var(--accent);
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 24px;
-    }
-
-    .mentor-box h3 {
-      font-size: 1.1rem;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    /* 直接聯絡信箱顯示區塊 */
-    .direct-contact {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--border);
-      padding: 16px;
-      border-radius: 8px;
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .direct-contact a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .direct-contact a:hover {
-      text-decoration: underline;
-    }
-
-    /* 表單樣式 */
-    .sponsor-form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      text-align: left;
-    }
-
-    .form-group label {
-      font-size: 0.9rem;
-      color: var(--text-main);
-      font-weight: 500;
-    }
-
-    .form-control {
-      background-color: #0f172a;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px;
-      color: var(--text-main);
-      font-size: 1rem;
-      width: 100%;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .form-control:focus {
-      border-color: var(--accent);
-    }
-
-    textarea.form-control {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .cta-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-    }
-
-    .btn {
-      display: inline-block;
-      width: 100%;
-      max-width: 320px;
-      text-align: center;
-      font-weight: 600;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      transition: all 0.2s ease;
-    }
-
-    .btn-accent {
-      background-color: var(--accent);
-      color: #0f172a;
-      max-width: 100%;
-    }
-
-    .btn-accent:hover {
-      background-color: var(--accent-hover);
-    }
-
-    .btn-discord {
-      background-color: var(--discord-purple);
-      color: #ffffff;
-    }
-
-    .btn-discord:hover {
-      background-color: var(--discord-hover);
-    }
-
-    .btn-youtube {
-      background-color: var(--youtube-red);
-      color: #ffffff;
-    }
-
-    .btn-youtube:hover {
-      background-color: var(--youtube-hover);
-    }
-
-    .btn-outline {
-      background-color: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-    }
-
-    .btn-outline:hover {
-      background-color: rgba(255, 255, 255, 0.05);
-      color: var(--text-main);
-    }
-
-    .subtext {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
+    .footer { border-top: 1px solid var(--border); padding-top: 24px; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <header>
-      <h1>Christian Multilingual Faith Paradise</h1>
-      <p class="tagline">Connect, study, and share your faith across languages in a welcoming, multi-lingual community.</p>
-    </header>
-
-    <div class="section">
-      <h2>About Our Community</h2>
-      <p>Welcome to <strong>Christian Multilingual Faith Paradise</strong>—a global hub for believers, language learners, and seekers from all cultural backgrounds. Our mission is to bring people together across linguistic boundaries to share faith, study scripture, and build meaningful cross-cultural friendships.</p>
-    </div>
-
-    <div class="section">
-      <h2>What You’ll Find</h2>
-      <ul>
-        <li><strong>Multi-Lingual Fellowship:</strong> Dedicated spaces for dozens of languages where you can chat, practice writing, and encourage one another.</li>
-        <li><strong>Scripture & Etymology Study:</strong> Explore biblical texts, translation nuances, and historical contexts with fellow language enthusiasts.</li>
-        <li><strong>Prayer & Encouragement:</strong> Share prayer requests and devotional insights with a supportive global network.</li>
-        <li><strong>Co-Working & Study Sessions:</strong> Join quiet text and voice channels designed for focused study, reflection, and language practice.</li>
+    <nav>
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/></svg>
+        Faith Paradise
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="resources.html">Bible Resources</a></li>
+        <li><a href="mentors.html">Mentors & Sponsors</a></li>
+        <li><a href="community.html">Community</a></li>
       </ul>
+    </nav>
+
+    <div class="hero">
+      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      <h1>Christian Multilingual Faith Paradise</h1>
+      <p>A global community uniting believers, scholars, and language learners to study scripture, share prayer, and foster fellowship across languages.</p>
     </div>
 
-    <!-- 線上英文聖經資源區塊 -->
-    <div class="section">
-      <h2>Online English Bible Resources</h2>
-      <p>Access trusted English translations, commentaries, and multi-lingual study tools for your daily reading and research:</p>
-      
-      <div class="bible-resources-grid">
-        <a href="https://www.biblegateway.com/" target="_blank" rel="noopener noreferrer" class="resource-card">
-          <div class="resource-title">BibleGateway ↗</div>
-          <div class="resource-desc">Read, search, and study Scripture in multiple English versions (NIV, ESV, KJV) and parallel translations.</div>
-        </a>
+    <h2 style="color: var(--accent); margin-bottom: 16px;">Core Pillars</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1a2 2 0 0 0 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41a7.98 7.98 0 0 1 4.9 10.81z"/></svg></div>
+        <h3>Multi-Lingual Fellowship</h3>
+        <p>Dedicated channels for dozens of languages allowing peer practice, translation discussions, and cross-cultural ministry.</p>
+      </div>
 
-        <a href="https://www.blueletterbible.org/" target="_blank" rel="noopener noreferrer" class="resource-card">
-          <div class="resource-title">Blue Letter Bible ↗</div>
-          <div class="resource-desc">In-depth study tools including original Hebrew/Greek lexicons, interlinear tools, and commentaries.</div>
-        </a>
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm9 16H6V4h1v9l2.5-1.88L12 13V4h6v16z"/></svg></div>
+        <h3>Scripture & Etymology</h3>
+        <p>Deep dive into ancient root words, linguistic nuances, and historical contexts of biblical manuscripts.</p>
+      </div>
 
-        <a href="https://www.bible.com/" target="_blank" rel="noopener noreferrer" class="resource-card">
-          <div class="resource-title">YouVersion Bible.com ↗</div>
-          <div class="resource-desc">Daily reading plans, audio Bibles, and community devotional features across multiple languages.</div>
-        </a>
-
-        <a href="https://www.bible.com/audio-bible-app" target="_blank" rel="noopener noreferrer" class="resource-card">
-          <div class="resource-title">YouVersion Audio Bible ↗</div>
-          <div class="resource-desc">Listen to high-quality audio narrations of English translations while studying or multi-tasking.</div>
-        </a>
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></div>
+        <h3>Study & Co-Working</h3>
+        <p>Silent study rooms and structured prayer sessions tailored for educators, researchers, and dedicated students.</p>
       </div>
     </div>
 
-    <div class="section">
-      <h2>Categories</h2>
-      <div class="tags">
-        <span class="tag">Community</span>
-        <span class="tag">Faith / Religion</span>
-        <span class="tag">Education</span>
-        <span class="tag">Languages</span>
-        <span class="tag">International</span>
-        <span class="tag">Scripture Study</span>
-        <span class="tag">Culture</span>
-      </div>
-    </div>
-
-    <!-- 前輩與導師致意專區 -->
-    <div class="section">
-      <h2>Mentors & Honored Predecessors</h2>
-      <div class="mentor-box">
-        <h3>With Deep Gratitude</h3>
-        <p>We extend our heartfelt respect and gratitude to the spiritual mentors, educators, and senior scholars who have laid the groundwork for Christian language education and cross-cultural ministry. Your wisdom continues to guide our path.</p>
-      </div>
-    </div>
-
-    <!-- 基督教贊助商與合作 / 前輩聯繫窗口表單 (已整合 Formspree Endpoint: myeezkkw) -->
-    <div class="section">
-      <h2>Partnership & Mentor Inquiry</h2>
-      <p>Are you a Christian organization, sponsor, or an esteemed senior mentor wishing to connect or share guidance with our community? Please use the form below or reach out to us directly.</p>
-
-      <form action="https://formspree.io/f/myeezkkw" method="POST" class="sponsor-form">
-        <div class="form-group">
-          <label for="sender_type">Inquiry Category (來信身分)</label>
-          <select id="sender_type" name="sender_type" class="form-control">
-            <option value="Sponsor / Organization">Christian Sponsor / Organization (基督教贊助廠商 / 機構)</option>
-            <option value="Senior Mentor / Scholar">Senior Mentor / Honored Predecessor (前輩 / 學者 / 屬靈導師)</option>
-            <option value="Other Collaboration">Other Partnership / Inquiry (其他合作或建言)</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="name">Your Name / Title (姓名或稱謂)</label>
-          <input type="text" id="name" name="name" class="form-control" required placeholder="Your name or organization title">
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address (電子郵件)</label>
-          <input type="email" id="email" name="email" class="form-control" required placeholder="name@example.com">
-        </div>
-
-        <div class="form-group">
-          <label for="message">Message / Guidance / Proposal (訊息內容或指導)</label>
-          <textarea id="message" name="message" class="form-control" required placeholder="Share your message, proposal, or guidance with us..."></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-accent">Submit Message</button>
-      </form>
-
-      <!-- 直接顯示電子郵件窗口 -->
-      <div class="direct-contact">
-        <p style="margin-bottom: 4px; color: var(--text-main);">Direct Email Contact:</p>
-        <a href="mailto:danielenglish19960118@gmail.com">danielenglish19960118@gmail.com</a>
-      </div>
-    </div>
-
-    <!-- 註冊與加入社群區塊 (含 YouTube 與 Discord) -->
-    <div class="cta-container">
-      <!-- YouTube 頻道按鈕 -->
-      <a href="https://www.youtube.com/@ChristianMultilingual" class="btn btn-youtube" target="_blank" rel="noopener noreferrer">
-        Watch on YouTube
-      </a>
-
-      <!-- Discord 伺服器邀請按鈕 -->
-      <a href="https://discord.gg/AcsQ6DDqPB" class="btn btn-discord" target="_blank" rel="noopener noreferrer">
-        Join Server via Discord
-      </a>
-      
-      <!-- Discord 註冊引導 -->
-      <a href="https://discord.com/register" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
-        Don't have an account? Register on Discord
-      </a>
-
-      <p class="subtext">New to Discord? Creating an account takes less than a minute.</p>
+    <div class="footer">
+      <p>&copy; 2026 Christian Multilingual Faith Paradise. All rights reserved.</p>
     </div>
   </div>
 
