@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule | Christian Multilingual</title>
+  <style>
+    :root { --bg-color: #0f172a; --card-bg: #1e293b; --text-main: #f8fafc; --text-muted: #94a3b8; --accent: #38bdf8; --border: #334155; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; min-height: 100vh; padding: 20px; display: flex; justify-content: center; }
+    .container { max-width: 960px; width: 100%; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    nav { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; }
+    .logo { font-size: 1.3rem; font-weight: 700; color: var(--accent); text-decoration: none; margin-bottom: 16px; display: block; }
+    .nav-links { display: flex; gap: 12px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 6px 12px; border-radius: 6px; }
+    .nav-links a.active { color: var(--accent); background: rgba(56, 189, 248, 0.1); }
+    .event-card { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 20px; border-radius: 8px; margin-top: 16px; }
+    .event-card h3 { color: var(--accent); margin-bottom: 4px; }
+    .time { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo">Faith Paradise</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resources.html">Bible Resources</a></li>
+        <li><a href="languages.html">Languages</a></li>
+        <li><a href="etymology.html">Etymology</a></li>
+        <li><a href="mentors.html">Mentors & Sponsors</a></li>
+        <li><a href="schedule.html" class="active">Schedule</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+    </nav>
+    <h1>Weekly Gatherings & Co-Working</h1>
+    <p style="color: var(--text-muted);">Join our scheduled study circles and prayer sessions held on Discord.</p>
+    <div class="event-card">
+      <h3>Silent Co-Working & Study Session</h3>
+      <div class="time">Daily | 24/7 Voice Study Lounge</div>
+      <p style="color: var(--text-muted);">Quiet environment for reading, translation work, and scriptural research.</p>
+    </div>
+    <div class="event-card">
+      <h3>Multilingual Scripture Reading</h3>
+      <div class="time">Saturdays | Global Voice Channel</div>
+      <p style="color: var(--text-muted);">Fellowship members read designated chapters across different translations.</p>
+    </div>
+  </div>
+</body>
+</html>
